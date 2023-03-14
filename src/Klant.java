@@ -1,23 +1,98 @@
 class Klant{
 
+    private String naam;
+    private String email;
+    private String telefoonnummer;
+
+    private Persoon contactpersoon;
+    private Klanttype klanttype;
+
+    Klant(String naam, String email, Klanttype klanttype){
+        this.naam = naam;
+        this.email = email;
+        this.klanttype = klanttype;
+    }
+
+    Klant(String naam, String email, String telefoonnummer, Klanttype klanttype){
+        this(naam, email, klanttype);
+        this.telefoonnummer = telefoonnummer;
+    }
+
+    Klant(Persoon contactpersoon, Klanttype klanttype){
+        this.naam = contactpersoon.getVoornaam() + " " + contactpersoon.getAchternaam();
+        this.email = contactpersoon.getEmail();
+        this.telefoonnummer = contactpersoon.getTelefoonnummer();
+        this.klanttype = klanttype;
+    }
+
+    Klant(String naam, Persoon contactpersoon, Klanttype klanttype){
+        this.naam = naam;
+        this.email = contactpersoon.getEmail();
+        this.telefoonnummer = contactpersoon.getTelefoonnummer();
+        this.klanttype = klanttype;
+    }
+
+    public String getNaam(){
+        return this.naam;
+    }
+
+    public String getEmail(){
+        return this.email;
+    }
+
+    public String getTelefoonnummer(){
+        return this.telefoonnummer;
+    }
+    public Persoon getContactPersoon(){
+        return this.contactpersoon;
+    }
+    public Klanttype getKlanttype(){
+        return this.klanttype;
+    }
+
+    public void setNaam(String naam){
+        this.naam = naam;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
+    }
+
+    public void setTelefoonnummer(String telefoonnummer){
+        this.telefoonnummer = telefoonnummer;
+    }
+
+    public void setContactpersoon(Persoon contactpersoon){
+        this.contactpersoon = contactpersoon;
+    }
+
+    public void setKlanttype(Klanttype klanttype){
+        this.klanttype = klanttype;
+    }
+}
+
+
+class Persoon{
     private String voornaam;
     private String achternaam;
     private String geslacht;
     private String geboortedatum;
-    private String email;
     private String telefoonnummer;
+    private String email;
+    private String adres;
 
-    Klant(String voornaam, String achternaam, String geslacht, String geboortedatum, String email){
+    Persoon(String voornaam, String achternaam, String geslacht, String geboortedatum, String email, String telefoonnummer){
         this.voornaam = voornaam;
         this.achternaam = achternaam;
         this.geslacht = geslacht;
         this.geboortedatum = geboortedatum;
         this.email = email;
+        this.telefoonnummer = telefoonnummer;
     }
 
-    Klant(String voornaam, String achternaam, String geslacht, String geboortedatum, String email, String telefoonnummer){
-        this(voornaam, achternaam, geslacht, geboortedatum, email);
-        this.telefoonnummer = telefoonnummer;
+    Persoon(String voornaam, String achternaam, String geslacht, String geboortedatum, String email, String telefoonnummer, String adres){
+        this(voornaam, achternaam, geslacht, geboortedatum, email, telefoonnummer);
+        this.adres = adres;
     }
 
     public String getVoornaam(){
@@ -43,6 +118,9 @@ class Klant{
     public String getTelefoonnummer(){
         return this.telefoonnummer;
     }
+    public String getAdres(){
+        return this.adres;
+    }
 
     public void setVoornaam(String voornaam){
         this.voornaam = voornaam;
@@ -67,78 +145,25 @@ class Klant{
     public void setTelefoonnummer(String telefoonnummer){
         this.telefoonnummer = telefoonnummer;
     }
+
+    public void setAdres(String adres){
+        this.adres = adres;
+    }
 }
 
-class Particulier extends Klant{
-    static double korting;
-    Particulier(String voornaam, String achternaam, String geslacht, String geboortedatum, String email) {
-        super(voornaam, achternaam, geslacht, geboortedatum, email);
-        this.korting = 5.0;
+class Klanttype{
+    private int korting;
+
+    Klanttype(int korting){
+        this.korting = korting;
     }
 
-    Particulier(String voornaam, String achternaam, String geslacht, String geboortedatum, String email, String telefoonnummer) {
-        super(voornaam, achternaam, geslacht, geboortedatum, email, telefoonnummer);
-        korting = 5.0;
+    public int getKorting(){
+        return this.korting;
     }
 
-    public double getKorting() {
-        return korting;
-    }
-
-    public void setKorting(double korting){
+    public void setKorting(int korting){
         this.korting = korting;
     }
 }
 
-class Bedrijf extends Klant{
-    private String bedrijfsnaam;
-    static double korting;
-    Bedrijf(String bedrijfsnaam, String voornaam, String achternaam, String geslacht, String geboortedatum, String email) {
-        super(voornaam, achternaam, geslacht, geboortedatum, email);
-        korting = 10.0;
-        this.bedrijfsnaam = bedrijfsnaam;
-    }
-
-    Bedrijf(String bedrijfsnaam, String voornaam, String achternaam, String geslacht, String geboortedatum, String email, String telefoonnummer) {
-        super(voornaam, achternaam, geslacht, geboortedatum, email, telefoonnummer);
-        korting = 10.0;
-        this.bedrijfsnaam = bedrijfsnaam;
-    }
-
-    public double getKorting() {
-        return korting;
-    }
-
-    public void setKorting(double korting){
-        this.korting = korting;
-    }
-
-    public String getBedrijfsnaam() {
-        return this.bedrijfsnaam;
-    }
-
-    public void setBedrijfsnaam(String bedrijfsnaam){
-        this.bedrijfsnaam = bedrijfsnaam;
-    }
-}
-
-class Overheid extends Klant{
-    static double korting;
-    Overheid(String voornaam, String achternaam, String geslacht, String geboortedatum, String email) {
-        super(voornaam, achternaam, geslacht, geboortedatum, email);
-        korting = 15.0;
-    }
-
-    Overheid(String voornaam, String achternaam, String geslacht, String geboortedatum, String email, String telefoonnummer) {
-        super(voornaam, achternaam, geslacht, geboortedatum, email, telefoonnummer);
-        korting = 15.0;
-    }
-
-    static double getKorting() {
-        return korting;
-    }
-
-    public void setKorting(double korting){
-        this.korting = korting;
-    }
-}
