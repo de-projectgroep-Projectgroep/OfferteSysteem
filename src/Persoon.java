@@ -1,23 +1,21 @@
 class Persoon{
     private String voornaam;
     private String achternaam;
-    private String geslacht;
     private String geboortedatum;
     private String telefoonnummer;
     private String email;
     private String adres;
 
-    Persoon(String voornaam, String achternaam, String geslacht, String geboortedatum, String email, String telefoonnummer){
+    Persoon(String voornaam, String achternaam, String geboortedatum, String email, String telefoonnummer){
         this.voornaam = voornaam;
         this.achternaam = achternaam;
-        this.geslacht = geslacht;
         this.geboortedatum = geboortedatum;
         this.email = email;
         this.telefoonnummer = telefoonnummer;
     }
 
-    Persoon(String voornaam, String achternaam, String geslacht, String geboortedatum, String email, String telefoonnummer, String adres){
-        this(voornaam, achternaam, geslacht, geboortedatum, email, telefoonnummer);
+    Persoon(String voornaam, String achternaam, String geboortedatum, String email, String telefoonnummer, String adres){
+        this(voornaam, achternaam, geboortedatum, email, telefoonnummer);
         this.adres = adres;
     }
 
@@ -27,10 +25,6 @@ class Persoon{
 
     public String getAchternaam(){
         return this.achternaam;
-    }
-
-    public String getGeslacht(){
-        return this.geslacht;
     }
 
     public String getGeboortedatum(){
@@ -56,10 +50,6 @@ class Persoon{
         this.achternaam = achternaam;
     }
 
-    public void setGeslacht(String geslacht){
-        this.geslacht = geslacht;
-    }
-
     public void setGeboortedatum(String geboortedatum){
         this.geboortedatum = geboortedatum;
     }
@@ -72,7 +62,7 @@ class Persoon{
         this.telefoonnummer = telefoonnummer;
     }
 
-    public void setAdres(String adres){
+    public void setAdres(String adres) {
         this.adres = adres;
     }
 }

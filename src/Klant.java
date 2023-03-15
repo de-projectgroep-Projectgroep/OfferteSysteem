@@ -1,12 +1,10 @@
 class Klant{
-
     private String naam;
     private String email;
     private String telefoonnummer;
 
     private Persoon contactpersoon;
     private Klanttype klanttype;
-
     Klant(String naam, String email, Klanttype klanttype){
         this.naam = naam;
         this.email = email;
