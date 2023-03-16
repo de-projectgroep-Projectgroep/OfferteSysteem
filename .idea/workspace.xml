@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bfca883-b626-48de-a475-67ea5f65d811" name="Changes" comment="Nog meer methoden uitgewerkt (nog niet af)">
-      <change beforePath="$PROJECT_DIR$/src/ObjectStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObjectStorage.java" afterDir="false" />
+    <list default="true" id="0bfca883-b626-48de-a475-67ea5f65d811" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/totaalprijs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,19 +39,9 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/marti/Documents/GitHub/OfferteSysteem&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\TimenvanNoort\IdeaProjects\OfferteSysteem\src" />
-      <recent name="C:\Users\TimenvanNoort\IdeaProjects\OfferteSysteem\src\Klant" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,63 +65,7 @@
       <option name="project" value="LOCAL" />
       <updated>1678365701464</updated>
     </task>
-    <task id="LOCAL-00003" summary="Commit">
-      <created>1678366104656</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1678366104656</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Geen test meer">
-      <created>1678366141385</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1678366141385</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Geen test meer">
-      <created>1678366185290</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1678366185290</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Klanttypes">
-      <created>1678797349851</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1678797349851</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Ipv Klant subclasses 3 classes gemaakt voor meer flexibiliteit">
-      <created>1678823058031</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1678823058031</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Layout verbeterd en een class Vragen toegevoegd met methoden om gemakkelijk variablen op te kunnen vragen.">
-      <created>1678896968414</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1678896968414</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Test verwijderd">
-      <created>1678897018482</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1678897018482</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Nog meer methoden uitgewerkt (nog niet af)">
-      <created>1678975535613</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1678975535613</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,24 +81,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="testfilemmdmdmdmd" />
-    <MESSAGE value="Commit" />
-    <MESSAGE value="Geen test meer" />
-    <MESSAGE value="Klanttypes" />
-    <MESSAGE value="Ipv Klant subclasses 3 classes gemaakt voor meer flexibiliteit" />
-    <MESSAGE value="Layout verbeterd en een class Vragen toegevoegd met methoden om gemakkelijk variablen op te kunnen vragen." />
-    <MESSAGE value="Test verwijderd" />
-    <MESSAGE value="Nog meer methoden uitgewerkt (nog niet af)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nog meer methoden uitgewerkt (nog niet af)" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Klant.java</url>
-          <line>10</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="testfilemmdmdmdmd" />
   </component>
 </project>
