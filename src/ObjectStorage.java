@@ -69,6 +69,13 @@ public class ObjectStorage {
                     match = true;
                 }
             }
+            if (klanttype == null){
+                System.out.println("Dit klanttype staat niet in dit systeem.");
+                System.out.println("De volgende klanttypes staan in dit systeem:");
+                for (Klanttype x : klanttypes) {
+                    System.out.println(x.getType());
+                }
+            }
         }
         return klanttype;
     }
@@ -244,5 +251,7 @@ public class ObjectStorage {
         }
 
         Klanttype klanttype = getKlanttype();
+
+
     }
 }

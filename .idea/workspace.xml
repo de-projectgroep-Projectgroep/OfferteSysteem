@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bfca883-b626-48de-a475-67ea5f65d811" name="Changes" comment="Opslag voor objecten toegevoegd en methoden gemaakt voor toevoeging van personen en klanttypen">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0bfca883-b626-48de-a475-67ea5f65d811" name="Changes" comment="Nog meer methoden uitgewerkt (nog niet af)">
       <change beforePath="$PROJECT_DIR$/src/ObjectStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObjectStorage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678897018482</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Nog meer methoden uitgewerkt (nog niet af)">
+      <created>1678975535613</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678975535613</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,7 +151,8 @@
     <MESSAGE value="Ipv Klant subclasses 3 classes gemaakt voor meer flexibiliteit" />
     <MESSAGE value="Layout verbeterd en een class Vragen toegevoegd met methoden om gemakkelijk variablen op te kunnen vragen." />
     <MESSAGE value="Test verwijderd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test verwijderd" />
+    <MESSAGE value="Nog meer methoden uitgewerkt (nog niet af)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Nog meer methoden uitgewerkt (nog niet af)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
