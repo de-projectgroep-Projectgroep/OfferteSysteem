@@ -5,14 +5,11 @@ class Klant{
 
     private Persoon contactpersoon;
     private Klanttype klanttype;
-    Klant(String naam, String email, Klanttype klanttype){
+
+    Klant(String naam, String email, String telefoonnummer, Klanttype klanttype){
         this.naam = naam;
         this.email = email;
         this.klanttype = klanttype;
-    }
-
-    Klant(String naam, String email, String telefoonnummer, Klanttype klanttype){
-        this(naam, email, klanttype);
         this.telefoonnummer = telefoonnummer;
     }
 
@@ -21,6 +18,7 @@ class Klant{
         this.email = contactpersoon.getEmail();
         this.telefoonnummer = contactpersoon.getTelefoonnummer();
         this.klanttype = klanttype;
+        this.contactpersoon = contactpersoon;
     }
 
     Klant(String naam, Persoon contactpersoon, Klanttype klanttype){
@@ -28,6 +26,7 @@ class Klant{
         this.email = contactpersoon.getEmail();
         this.telefoonnummer = contactpersoon.getTelefoonnummer();
         this.klanttype = klanttype;
+        this.contactpersoon = contactpersoon;
     }
 
     public String getNaam(){

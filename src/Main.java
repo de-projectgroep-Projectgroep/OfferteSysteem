@@ -2,22 +2,12 @@ import java.util.ArrayList;
 import java.util.List;
 public class Main {
     public static void main(String[] args) {
-        ObjectStorage.addKlanttype();
+        ObjectStorage.klanttypes.add(new Klanttype("Particulier", 0));
+        ObjectStorage.personen.add(new Persoon("John", "Smith", "Oktober", "John@Email.com", "555"));
+        ObjectStorage.klanten.add(new Klant(ObjectStorage.personen.get(0), ObjectStorage.klanttypes.get(0)));
 
-        //testOptie
-        List<Optie> opties = new ArrayList<>();
-        Optie.voegOptieToe(opties);
-        opties.add(new Optie(new OptieGegevens("Airco", "Een airconditioning systeem", "Essentieel")));
-        System.out.println();
-        Optie.toonOpties(opties);
-        System.out.println();
-        Optie.verwijderOptie(opties);
-        System.out.println();
-        Optie.toonOpties(opties);
-        System.out.println();
-        Optie.bewerkOptie(opties);
-        System.out.println();
-        Optie.toonOpties(opties);
+        ObjectStorage.addKlant();
 
+        System.out.println(ObjectStorage.klanten.get(ObjectStorage.klanten.size()-1).getNaam());
     }
 }

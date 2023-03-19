@@ -6,7 +6,22 @@ public class ObjectStorage {
     public static ArrayList<Klant> klanten = new ArrayList<Klant>();
 
     public static void addKlanttype(){
-        String type = Vragen.vraagString("Over wat voor type klant gaat het?");
+        boolean uniekType = false;
+        String type = null;
+        int uniekCheck;
+        while (!uniekType) {
+            type = Vragen.vraagString("Over wat voor klanttype gaat het?");
+            uniekCheck = 0;
+            for (Klanttype klanttype : klanttypes){
+                if (klanttype.getType().equals(type)){
+                    System.out.println("Dit klanttype staat al in ons systeem.");
+                    uniekCheck++;
+                }
+            }
+            if (uniekCheck == 0){
+                uniekType = true;
+            }
+        }
         int korting = Vragen.vraagInt("Hoeveel procent korting moet dit klanttype krijgen?");
 
         System.out.println("");
@@ -19,27 +34,27 @@ public class ObjectStorage {
     }
 
     public static void addPersoon(){
-        String voornaam = Vragen.vraagString("Wat is uw voornaam?");
-        String achternaam = Vragen.vraagString("Wat is uw achternaam?");
-        String geboortedatum = Vragen.vraagString("Wat is uw geboortedatum?");
-        String telefoonnummer = Vragen.vraagString("Wat is uw telefoonnummer?");
-        String email = Vragen.vraagString("Wat is uw email?");
+        String voornaam = Vragen.vraagString("Wat is de voornaam van de persoon?");
+        String achternaam = Vragen.vraagString("Wat is de achternaam van de persoon?");
+        String geboortedatum = Vragen.vraagString("Wat is de geboortedatum van de persoon?");
+        String email = Vragen.vraagString("Wat is de email van de persoon?");
+        String telefoonnummer = Vragen.vraagString("Wat is de telefoonnummer van de persoon?");
         String adres;
 
-        if(Vragen.vraagJaNee("Wilt u ook uw adres opgeven?")){
-            adres = Vragen.vraagString("Wat is uw adres?");
+        if(Vragen.vraagJaNee("Wilt u ook een adres opgeven?")){
+            adres = Vragen.vraagString("Wat is het adres?");
 
             System.out.println("");
             System.out.println("Er is een nieuw persoon aangemaakt met de volgende persoongegevens:");
             System.out.println("Voornaam: " + voornaam);
             System.out.println("Achternaam: " + achternaam);
             System.out.println("Geboortedatum: " + geboortedatum);
-            System.out.println("Telefoonnummer: " + telefoonnummer);
             System.out.println("Email: " + email);
+            System.out.println("Telefoonnummer: " + telefoonnummer);
             System.out.println("Adres: " + adres);
             System.out.println("");
 
-            personen.add(new Persoon(voornaam, achternaam, geboortedatum, telefoonnummer, email, adres));
+            personen.add(new Persoon(voornaam, achternaam, geboortedatum, email, telefoonnummer, adres));
         }
 
         else{
@@ -48,12 +63,12 @@ public class ObjectStorage {
             System.out.println("Voornaam: " + voornaam);
             System.out.println("Achternaam: " + achternaam);
             System.out.println("Geboortedatum: " + geboortedatum);
-            System.out.println("Telefoonnummer: " + telefoonnummer);
             System.out.println("Email: " + email);
+            System.out.println("Telefoonnummer: " + telefoonnummer);
             System.out.println("Adres: " + "n.v.t.");
             System.out.println("");
 
-            personen.add(new Persoon(voornaam, achternaam, geboortedatum, telefoonnummer, email));
+            personen.add(new Persoon(voornaam, achternaam, geboortedatum, email, telefoonnummer));
         }
     }
 
@@ -75,6 +90,7 @@ public class ObjectStorage {
                 for (Klanttype x : klanttypes) {
                     System.out.println(x.getType());
                 }
+                System.out.println("");
             }
         }
         return klanttype;
@@ -95,8 +111,10 @@ public class ObjectStorage {
             }
 
             if (zoekResultaten.size() == 0){
+                System.out.println("Deze persoon staat niet in ons systeem.");
+                System.out.println("Vul zowel de voornaam als achternaam van de persoon in.");
                 if(!Vragen.vraagJaNee("Wilt u nog een keer proberen de naam in te voeren?")){
-                    match1 = false;
+                    match1 = true;
                     System.out.println("Het is niet gelukt om de persoon te vinden.");
                 }
             }
@@ -121,16 +139,14 @@ public class ObjectStorage {
                         }
 
                         if (teller > 1){
-                        System.out.println("Het ziet er naar uit dat deze persoon meerdere keren in ons systeem staat geregistreerd");
-                        System.out.println("Los dit probleem op en probeer vervolgens opnieuw de persoon toe te voegen.");
-                        persoon = -2;
-                        match2 = true;
-                        match1 = true;
+                            System.out.println("Het ziet er naar uit dat deze persoon meerdere keren in ons systeem staat geregistreerd");
+                            System.out.println("Los dit probleem op en probeer vervolgens opnieuw de persoon toe te voegen.");
+                            persoon = -2;
+                            match2 = true;
+                            match1 = true;
                     }
 
                     if (teller == 1){
-                        System.out.println("Het ziet er naar uit dat deze persoon meerdere keren in ons systeem staat geregistreerd");
-                        System.out.println("Los dit probleem op en probeer vervolgens opnieuw de persoon toe te voegen.");
                         persoon = resultaat;
                         match2 = true;
                         match1 = true;
@@ -139,9 +155,9 @@ public class ObjectStorage {
                     if (teller == 0){
                         System.out.println("Geen van de twee klanten met de gegeven naam hebben deze email.");
                         if(!Vragen.vraagJaNee("Wilt u nog een keer proberen de email in te voeren?")){
-                            match2 = false;
+                            match2 = true;
                             if(!Vragen.vraagJaNee("Wilt u nog een keer proberen de naam in te voeren?")){
-                                match1 = false;
+                                match1 = true;
                                 System.out.println("Het is niet gelukt om de persoon te vinden.");
                             }
                         }
@@ -168,8 +184,9 @@ public class ObjectStorage {
             }
 
             if (zoekResultaten.size() == 0){
+                System.out.println("Deze klant staat niet in ons systeem.");
                 if(!Vragen.vraagJaNee("Wilt u nog een keer proberen de naam in te voeren?")){
-                    match1 = false;
+                    match1 = true;
                     System.out.println("Het is niet gelukt om de klant te vinden.");
                 }
             }
@@ -187,23 +204,21 @@ public class ObjectStorage {
                     input = Vragen.vraagString("Wat is de email van de klant?");
 
                     for(int i = 0; i <zoekResultaten.size(); i++){
-                        if((personen.get(zoekResultaten.get(i)).getEmail().equals(input))){
+                        if((klanten.get(zoekResultaten.get(i)).getEmail().equals(input))){
                             resultaat = zoekResultaten.get(i);
                             teller++;
                         }
                     }
 
                     if (teller > 1){
-                        System.out.println("Het ziet er naar uit dat deze klant meerdere keren in ons systeem staat geregistreerd");
-                        System.out.println("Los dit probleem op en probeer vervolgens opnieuw de klant toe te voegen.");
+                        System.out.println("Het ziet er naar uit dat deze persoon meerdere keren in ons systeem staat geregistreerd");
+                        System.out.println("Los dit probleem op en probeer vervolgens opnieuw de persoon toe te voegen.");
                         klant = -2;
                         match2 = true;
                         match1 = true;
                     }
 
                     if (teller == 1){
-                        System.out.println("Het ziet er naar uit dat deze klant meerdere keren in ons systeem staat geregistreerd");
-                        System.out.println("Los dit probleem op en probeer vervolgens opnieuw de klant toe te voegen.");
                         klant = resultaat;
                         match2 = true;
                         match1 = true;
@@ -212,10 +227,10 @@ public class ObjectStorage {
                     if (teller == 0){
                         System.out.println("Geen van de twee klanten met de gegeven naam hebben deze email.");
                         if(!Vragen.vraagJaNee("Wilt u nog een keer proberen de email in te voeren?")){
-                            match2 = false;
+                            match2 = true;
                             if(!Vragen.vraagJaNee("Wilt u nog een keer proberen de naam in te voeren?")){
-                                match1 = false;
-                                System.out.println("Het is niet gelukt om de klant te vinden.");
+                                match1 = true;
+                                System.out.println("Het is niet gelukt om de persoon te vinden.");
                             }
                         }
                     }
@@ -224,34 +239,62 @@ public class ObjectStorage {
         }
         return klant;
     }
-    public static void addKlant(){
+    public static void addKlant() {
         Persoon persoon = null;
         int persoonid;
-        if(Vragen.vraagJaNee("Wilt u een (contact)persoon opgeven voor deze klant?")){
-            if(Vragen.vraagJaNee("Staat deze persoon al in ons systeem?")){
-                 persoonid = getPersoon();
-                 if (persoonid == -1){
-                     if(Vragen.vraagJaNee("Wilt u een nieuwe persoon toevoegen aan ons systeem?")){
-                         addPersoon();
-                         persoon = personen.get(personen.size()-1);
-                     }
-                 }
-            }
-            else {
+        if (Vragen.vraagJaNee("Wilt u een (contact)persoon opgeven voor deze klant?")) {
+            if (Vragen.vraagJaNee("Staat deze persoon al in ons systeem?")) {
+                persoonid = getPersoon();
+                if (persoonid == -1) {
+                    if (Vragen.vraagJaNee("Wilt u een nieuwe persoon toevoegen aan ons systeem?")) {
+                        addPersoon();
+                        persoon = personen.get(personen.size() - 1);
+                    }
+                }
+                if (persoonid >= 0) {
+                    persoon = personen.get(persoonid);
+                }
+            } else {
                 addPersoon();
                 persoon = personen.get(personen.size() - 1);
             }
         }
 
-        String naam;
+        String naam = null;
         if (persoon != null) {
-            if (!Vragen.vraagJaNee("Wilt u dat de naam van de klant hetzelfde is als de naam van de (contact)persoon?")){
+            if (!Vragen.vraagJaNee("Wilt u dat de naam van de klant hetzelfde is als de naam van de (contact)persoon?")) {
                 naam = Vragen.vraagString("Wat moet de naam van de klant worden?");
             }
         }
 
         Klanttype klanttype = getKlanttype();
 
+        if (persoon != null) {
+            if (naam != null) {
+                klanten.add(new Klant(naam, persoon, klanttype));
+            } else {
+                klanten.add(new Klant(persoon, klanttype));
+            }
+        }
+        else {
+            naam = Vragen.vraagString("Wat is de naam van de klant?");
+            String email = Vragen.vraagString("Wat is de email van de klant?");
+            String telefoonnummer = Vragen.vraagString("Wat is de telefoonnummer van de klant?");
+            klanten.add(new Klant(naam, email, telefoonnummer, klanttype));
+        }
 
+        System.out.println("");
+        System.out.println("Er is een nieuw persoon aangemaakt met de volgende persoongegevens:");
+        System.out.println("Klanttype: " + klanten.get(klanten.size()-1).getKlanttype().getType());
+        System.out.println("Naam: " + klanten.get(klanten.size()-1).getNaam());
+        System.out.println("Email: " + klanten.get(klanten.size()-1).getEmail());
+        System.out.println("Telefoonnummer: " + klanten.get(klanten.size()-1).getTelefoonnummer());
+        if (persoon != null){
+            System.out.println("(Contact)persoon: " + klanten.get(klanten.size()-1).getContactPersoon().getVoornaam() + " " + klanten.get(klanten.size()-1).getContactPersoon().getAchternaam());
+        }
+        else{
+            System.out.println("(Contact)persoon: n.v.t.");
+        }
+        System.out.println("");
     }
 }
