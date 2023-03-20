@@ -1,4 +1,4 @@
-public class totaalprijs {
+public class Totaalprijs {
 
     /*
      totaalprijs
