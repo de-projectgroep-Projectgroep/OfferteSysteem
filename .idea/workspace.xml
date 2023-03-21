@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bfca883-b626-48de-a475-67ea5f65d811" name="Changes" comment="Methoden van ObjectStorage voor het getten en adden van objecten zijn compleet. Removen / Bewerken ben ik nog niet aan toegekomen.">
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="0bfca883-b626-48de-a475-67ea5f65d811" name="Changes" comment="beginnetje aan user story 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Optie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Optie.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/OptieGegevens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OptieGegevens.java" afterDir="false" />
@@ -79,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678977731166</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="beginnetje aan user story 2">
+      <created>1679410053520</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679410053520</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -95,6 +100,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="testfilemmdmdmdmd" />
-    <option name="LAST_COMMIT_MESSAGE" value="testfilemmdmdmdmd" />
+    <MESSAGE value="beginnetje aan user story 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="beginnetje aan user story 2" />
   </component>
 </project>

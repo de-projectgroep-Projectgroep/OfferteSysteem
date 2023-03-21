@@ -3,6 +3,7 @@ public class OptieGegevens {
     private String beschrijving;
     private String categorie;
     private boolean milieuVriendelijk;
+
     public OptieGegevens(String naam, String beschrijving, String categorie) {
         this.naam = naam;
         this.beschrijving = beschrijving;

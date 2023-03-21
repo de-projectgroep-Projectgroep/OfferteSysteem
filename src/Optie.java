@@ -62,6 +62,9 @@ public class Optie {
             System.out.println("In welke categorie hoort de optie? (Essentieel/Extra)");
             String categorie = scanner.nextLine();
 
+            System.out.println("Is de optie milieuvriendelijk? (ja/nee)");
+            String milieu = scanner.nextLine().toLowerCase();
+
             OptieGegevens gegevens = new OptieGegevens(naam, beschrijving, categorie);
             Optie optie = new Optie(gegevens);
 
