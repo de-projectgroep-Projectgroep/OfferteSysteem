@@ -13,6 +13,16 @@ public class Optie {
         return gegevens;
     }
 
+    public static double milieuKorting(List<Optie> opties) {
+        double korting = 0.0;
+        for (Optie optie : opties) {
+            if (optie.getGegevens().isMilieuVriendelijk()) {
+                korting += 0.1;
+            }
+        }
+        return korting;
+    }
+
     public static void toonOpties(List<Optie> opties) {
         List<Optie> essentieleOpties = new ArrayList<>();
         List<Optie> extraOpties = new ArrayList<>();

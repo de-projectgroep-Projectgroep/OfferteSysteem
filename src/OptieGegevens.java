@@ -2,11 +2,12 @@ public class OptieGegevens {
     private String naam;
     private String beschrijving;
     private String categorie;
-
+    private boolean milieuVriendelijk;
     public OptieGegevens(String naam, String beschrijving, String categorie) {
         this.naam = naam;
         this.beschrijving = beschrijving;
         this.categorie = categorie;
+        this.milieuVriendelijk = false;
     }
 
     public String getNaam() {
@@ -23,6 +24,10 @@ public class OptieGegevens {
 
     public void setBeschrijving(String beschrijving) {
         this.beschrijving = beschrijving;
+    }
+
+    public boolean isMilieuVriendelijk() {
+        return milieuVriendelijk;
     }
 
     public String getCategorie() {
