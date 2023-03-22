@@ -2,7 +2,7 @@ public class OptieGegevens {
     private String naam;
     private String beschrijving;
     private String categorie;
-    private boolean milieuVriendelijk;
+    private final boolean milieuVriendelijk;
 
     public OptieGegevens(String naam, String beschrijving, String categorie) {
         this.naam = naam;

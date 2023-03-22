@@ -132,6 +132,7 @@ public class Optie {
                 System.out.println("1. Naam");
                 System.out.println("2. Beschrijving");
                 System.out.println("3. Categorie");
+                System.out.println("4. Milieu vriendelijkheid");
 
                 int keuze;
                 do {
@@ -141,7 +142,7 @@ public class Optie {
                     } catch (Exception e) {
                         keuze = 0;
                     }
-                } while (keuze < 1 || keuze > 3);
+                } while (keuze < 1 || keuze > 4);
 
 
                 switch (keuze) {
@@ -162,6 +163,12 @@ public class Optie {
                         String nieuweCategorie = scanner.nextLine();
                         optie.getGegevens().setCategorie(nieuweCategorie);
                         System.out.println("De categorie is gewijzigd naar \"" + nieuweCategorie + "\".");
+                    }
+                    case 4 -> {
+                        System.out.println("Is de optie milieuvriendelijk? (ja/nee)");
+                        String nieuweMilieu = scanner.nextLine().toLowerCase();
+                        //optie.setMilieuVriendelijk(nieuweMilieu);
+                        System.out.println("De milieuvriendelijkheid is gewijzigd naar \"" + nieuweMilieu + "\".");
                     }
                     default -> System.out.println("Ongeldige keuze.");
                 }
