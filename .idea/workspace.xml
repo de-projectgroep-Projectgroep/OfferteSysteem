@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bfca883-b626-48de-a475-67ea5f65d811" name="Changes" comment="code aangepast en verbeterd">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObjectStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObjectStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Optie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Optie.java" afterDir="false" />
-    </list>
+    <list default="true" id="0bfca883-b626-48de-a475-67ea5f65d811" name="Changes" comment="code makkelijker gemaakt" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679443999591</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="code makkelijker gemaakt">
+      <created>1679683149370</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679683149370</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -103,6 +106,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="testfilemmdmdmdmd" />
     <MESSAGE value="code aangepast en verbeterd" />
-    <option name="LAST_COMMIT_MESSAGE" value="code aangepast en verbeterd" />
+    <MESSAGE value="code makkelijker gemaakt" />
+    <option name="LAST_COMMIT_MESSAGE" value="code makkelijker gemaakt" />
   </component>
 </project>
