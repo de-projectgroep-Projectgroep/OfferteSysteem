@@ -202,17 +202,17 @@ public class ObjectStorage {
     public static void addOptie() {
         boolean uniekNaam = false;
         String naam = null;
-        int uniekCheck;
         while (!uniekNaam) {
             naam = Vragen.vraagString("Wat moet de naam van de optie worden?");
-            uniekCheck = 0;
+            boolean isUniek = true;
             for (Optie optie : opties) {
                 if (optie.getNaam().equals(naam)) {
                     System.out.println("Er staat al een optie met deze naam in ons systeem.");
-                    uniekCheck++;
+                    isUniek = false;
+                    break;
                 }
             }
-            if (uniekCheck == 0) {
+            if (isUniek) {
                 uniekNaam = true;
             }
         }
@@ -221,7 +221,7 @@ public class ObjectStorage {
 
         boolean essentieel = Vragen.vraagJaNee("Is dit een essentiële optie?");
 
-        Boolean milieuVriendelijk = Vragen.vraagJaNee("Is deze optie milieuvriendelijk?");
+        boolean milieuVriendelijk = Vragen.vraagJaNee("Is deze optie milieuvriendelijk?");
 
         System.out.println("");
         System.out.println("Er is een nieuw optie aangemaakt met de volgende gegevens:");
@@ -320,25 +320,23 @@ public class ObjectStorage {
 
     public static Optie getOptie() {
         Optie optie = null;
-        String input = null;
-        boolean match = false;
-
-        while (!match) {
-            input = Vragen.vraagString("Wat is de naam van de optie?");
+        while (true) {
+            String input = Vragen.vraagString("Wat is de naam van de optie?");
             for (Optie x : opties) {
                 if ((x.getNaam()).equals(input)) {
                     optie = x;
+                    break;
                 }
             }
 
-            if (optie == null) {
-                System.out.println("Deze optie staat niet in ons systeem.");
-                if (!Vragen.vraagJaNee("Wilt u nog een keer proberen de naam van de optie in te voeren?")) {
-                    match = true;
-                    System.out.println("Het is niet gelukt om de optie te vinden.");
-                }
+            if (optie != null) {
+                break;
             } else {
-                match = true;
+                System.out.println("Er is geen optie met de naam " + input + " in ons systeem gevonden.");
+                if (!Vragen.vraagJaNee("Wilt u nog een keer proberen de naam van de optie in te voeren?")) {
+                    System.out.println("Het is niet gelukt om de optie te vinden.");
+                    break;
+                }
             }
         }
         return optie;
@@ -377,7 +375,7 @@ public class ObjectStorage {
         }
     }
 
-    public static void removieOptie() {
+    public static void removeOptie() {
         Optie optie = getOptie();
         if (optie != null) {
             if (Vragen.vraagJaNee("Weet u zeker dat u deze optie wilt verwijderen?")) {
@@ -671,14 +669,13 @@ public class ObjectStorage {
 
     public static void editOptie() {
         boolean klaar = false;
-        String input;
         Optie optie = getOptie();
 
         if (optie != null) {
             while (!klaar) {
-                input = Vragen.vraagString("Wat wilt u aanpassen?");
+                String input = Vragen.vraagString("Wat wilt u aanpassen?");
 
-                if (input.equals("naam") || input.equals("Naam")) {
+                if (input.equalsIgnoreCase("naam")) {
                     klaar = true;
                     boolean uniekType = false;
                     int uniekCheck;
@@ -705,7 +702,7 @@ public class ObjectStorage {
                     }
                 }
 
-                if (input.equals("beschrijving") || input.equals("Beschrijving")) {
+                if (input.equalsIgnoreCase("beschrijving")) {
                     klaar = true;
                     String nieuweWaarde = Vragen.vraagString("Wat moet de nieuwe beschrijving worden?");
 
@@ -716,7 +713,7 @@ public class ObjectStorage {
                     }
                 }
 
-                if (input.equals("categorie") || input.equals("Categorie")) {
+                if (input.equalsIgnoreCase("categorie")) {
                     klaar = true;
                     boolean nieuweWaarde = Vragen.vraagJaNee("Moet dit een essentiële optie worden?");
 
@@ -727,7 +724,7 @@ public class ObjectStorage {
                     }
                 }
 
-                if (input.equals("milieuVriendelijkheid") || input.equals("MilieuVriendelijkheid") || input.equals("milieuvriendelijkheid") || input.equals("Milieuvriendelijkheid")) {
+                if (input.equalsIgnoreCase("milieuvriendelijkheid")) {
                     klaar = true;
                     boolean nieuweWaarde = Vragen.vraagJaNee("Is deze optie millieuvriendelijk?");
 
