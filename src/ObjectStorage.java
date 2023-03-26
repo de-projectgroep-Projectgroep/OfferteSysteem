@@ -294,25 +294,24 @@ public class ObjectStorage {
 
     public static Klant getKlant() {
         Klant klant = null;
-        String input = null;
         boolean match = false;
 
         while (!match) {
-            input = Vragen.vraagString("Wat is de naam van de klant?");
-            for (int i = 0; i < klanten.size(); i++) {
-                if ((klanten.get(i).getNaam()).equals(input)) {
-                    klant = klanten.get(i);
+            String input = Vragen.vraagString("Wat is de naam van de klant?");
+            for (Klant value : klanten) {
+                if ((value.getNaam()).equals(input)) {
+                    klant = value;
+                    match = true;
+                    break;
                 }
             }
 
-            if (klant == null) {
+            if (!match) {
                 System.out.println("Deze klant staat niet in ons systeem.");
                 if (!Vragen.vraagJaNee("Wilt u nog een keer proberen de naam in te voeren?")) {
-                    match = true;
                     System.out.println("Het is niet gelukt om de klant te vinden.");
+                    break;
                 }
-            } else {
-                match = true;
             }
         }
         return klant;
@@ -320,18 +319,19 @@ public class ObjectStorage {
 
     public static Optie getOptie() {
         Optie optie = null;
-        while (true) {
+        boolean match = false;
+
+        while (!match) {
             String input = Vragen.vraagString("Wat is de naam van de optie?");
             for (Optie x : opties) {
                 if ((x.getNaam()).equals(input)) {
                     optie = x;
+                    match = true;
                     break;
                 }
             }
 
-            if (optie != null) {
-                break;
-            } else {
+            if (!match) {
                 System.out.println("Er is geen optie met de naam " + input + " in ons systeem gevonden.");
                 if (!Vragen.vraagJaNee("Wilt u nog een keer proberen de naam van de optie in te voeren?")) {
                     System.out.println("Het is niet gelukt om de optie te vinden.");
@@ -668,81 +668,79 @@ public class ObjectStorage {
     }
 
     public static void editOptie() {
-        boolean klaar = false;
         Optie optie = getOptie();
 
-        if (optie != null) {
-            while (!klaar) {
+        if (optie == null) {
+            return;
+        }
+
+            while (true) {
                 String input = Vragen.vraagString("Wat wilt u aanpassen?");
 
-                if (input.equalsIgnoreCase("naam")) {
-                    klaar = true;
-                    boolean uniekType = false;
-                    int uniekCheck;
-                    String nieuweWaarde = null;
-
-                    while (!uniekType) {
-                        nieuweWaarde = Vragen.vraagString("Wat is de nieuwe naam van de optie?");
-                        uniekCheck = 0;
-                        for (Optie x : opties) {
-                            if (optie.getNaam().equals(nieuweWaarde)) {
-                                System.out.println("Er staat al een optie in ons systeem met deze naam.");
-                                uniekCheck++;
+                switch (input.toLowerCase()) {
+                    case "naam" -> {
+                        boolean uniekType = false;
+                        int uniekCheck;
+                        String nieuweNaam = null;
+                        while (!uniekType) {
+                            nieuweNaam = Vragen.vraagString("Wat is de nieuwe naam van de optie?");
+                            uniekCheck = 0;
+                            for (Optie x : opties) {
+                                if (optie.getNaam().equals(nieuweNaam)) {
+                                    System.out.println("Er staat al een optie in ons systeem met deze naam.");
+                                    uniekCheck++;
+                                }
+                            }
+                            if (uniekCheck == 0) {
+                                uniekType = true;
                             }
                         }
-                        if (uniekCheck == 0) {
-                            uniekType = true;
+                        if (Vragen.vraagJaNee("Weet u zeker dat u deze naam wilt wijzigen?")) {
+                            optie.setNaam(nieuweNaam);
+                        } else {
+                            System.out.println("De naam is niet gewijzigd.");
                         }
+                        return;
                     }
 
-                    if (Vragen.vraagJaNee("Weet u zeker dat u deze naam wilt wijzigen?")) {
-                        optie.setNaam(nieuweWaarde);
-                    } else {
-                        System.out.println("De naam is niet gewijzigd.");
+                    case "beschrijving" -> {
+                        String nieuweBeschrijving = Vragen.vraagString("Wat moet de nieuwe beschrijving worden?");
+                        if (Vragen.vraagJaNee("Weet u zeker dat u de beschrijving wilt wijzigen?")) {
+                            optie.setBeschrijving(nieuweBeschrijving);
+                        } else {
+                            System.out.println("De beschrijving is niet gewijzigd.");
+                        }
+                        return;
                     }
-                }
 
-                if (input.equalsIgnoreCase("beschrijving")) {
-                    klaar = true;
-                    String nieuweWaarde = Vragen.vraagString("Wat moet de nieuwe beschrijving worden?");
-
-                    if (Vragen.vraagJaNee("Weet u zeker dat u de beschrijving wilt wijzigen?")) {
-                        optie.setBeschrijving(nieuweWaarde);
-                    } else {
-                        System.out.println("De beschrijving is niet gewijzigd.");
+                    case "categorie" -> {
+                        boolean nieuweCategorie = Vragen.vraagJaNee("Moet dit een essentiële optie worden?");
+                        if (Vragen.vraagJaNee("Weet u zeker dat u de categorie wilt wijzigen?")) {
+                            optie.setEssentieel(nieuweCategorie);
+                        } else {
+                            System.out.println("De categorie is niet gewijzigd.");
+                        }
+                        return;
                     }
-                }
 
-                if (input.equalsIgnoreCase("categorie")) {
-                    klaar = true;
-                    boolean nieuweWaarde = Vragen.vraagJaNee("Moet dit een essentiële optie worden?");
-
-                    if (Vragen.vraagJaNee("Weet u zeker dat u de categorie wilt wijzigen?")) {
-                        optie.setEssentieel(nieuweWaarde);
-                    } else {
-                        System.out.println("De categorie is niet gewijzigd.");
+                    case "milieuvriendelijkheid" -> {
+                        boolean nieuweMilieuVriendelijkheid = Vragen.vraagJaNee("Is deze optie millieuvriendelijk?");
+                        if (Vragen.vraagJaNee("Weet u zeker dat u de milieuvriendelijkheid wilt wijzigen?")) {
+                            optie.setMilieuVriendelijk(nieuweMilieuVriendelijkheid);
+                        } else {
+                            System.out.println("De milieuvriendelijkheid is niet gewijzigd.");
+                        }
+                        return;
                     }
-                }
 
-                if (input.equalsIgnoreCase("milieuvriendelijkheid")) {
-                    klaar = true;
-                    boolean nieuweWaarde = Vragen.vraagJaNee("Is deze optie millieuvriendelijk?");
-
-                    if (Vragen.vraagJaNee("Weet u zeker dat u de milieuvriendelijkheid wilt wijzigen?")) {
-                        optie.setMilieuVriendelijk(nieuweWaarde);
-                    } else {
-                        System.out.println("De milieuvriendelijkheid is niet gewijzigd.");
-                    }
-                }
-
-                if (!klaar) {
-                    System.out.println("Dit is geen gegeven dat u kan wijzigen.");
-                    System.out.println("U kan de gegevens naam, beschrijving, categorie en millieuvriendelijkheid wijzigen.");
-                    if (!Vragen.vraagJaNee("Wilt u een van deze gegevens wijzigen?")) {
-                        klaar = true;
+                    default -> {
+                        System.out.println("Dit is geen gegeven dat u kan wijzigen.");
+                        System.out.println("U kan de gegevens naam, beschrijving, categorie en milieuvriendelijkheid wijzigen.");
+                        if (!Vragen.vraagJaNee("Wilt u een van deze gegevens wijzigen?")) {
+                            return;
+                        }
                     }
                 }
             }
         }
     }
-}

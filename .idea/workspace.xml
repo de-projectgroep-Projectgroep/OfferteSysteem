@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0bfca883-b626-48de-a475-67ea5f65d811" name="Changes" comment="code makkelijker gemaakt" />
+    <list default="true" id="0bfca883-b626-48de-a475-67ea5f65d811" name="Changes" comment="code aangepast">
+      <change beforePath="$PROJECT_DIR$/src/ObjectStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObjectStorage.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679683149370</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="code aangepast">
+      <created>1679686523984</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679686523984</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,6 +116,7 @@
     <MESSAGE value="testfilemmdmdmdmd" />
     <MESSAGE value="code aangepast en verbeterd" />
     <MESSAGE value="code makkelijker gemaakt" />
-    <option name="LAST_COMMIT_MESSAGE" value="code makkelijker gemaakt" />
+    <MESSAGE value="code aangepast" />
+    <option name="LAST_COMMIT_MESSAGE" value="code aangepast" />
   </component>
 </project>
