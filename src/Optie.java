@@ -9,10 +9,11 @@ public class Optie {
     private boolean essentieel;
     private boolean milieuVriendelijk;
 
-    public Optie(String naam, String beschrijving, boolean essentieel, boolean milieuVriendelijk) {
+    public Optie(String naam, String beschrijving, double kosten, boolean essentieel, boolean milieuVriendelijk) {
 
         this.naam = naam;
         this.beschrijving = beschrijving;
+        this.kosten = kosten;
         this.essentieel = essentieel;
         this.milieuVriendelijk = milieuVriendelijk;
     }
