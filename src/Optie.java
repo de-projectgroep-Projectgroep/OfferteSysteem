@@ -4,6 +4,8 @@ import java.util.List;
 public class Optie {
     private String naam;
     private String beschrijving;
+
+    private double kosten;
     private boolean essentieel;
     private boolean milieuVriendelijk;
 
@@ -23,6 +25,10 @@ public class Optie {
         return beschrijving;
     }
 
+    public double getKosten() {
+        return kosten;
+    }
+
     public boolean getEssentieel() {
         return essentieel;
     }
@@ -37,6 +43,10 @@ public class Optie {
 
     public void setBeschrijving(String beschrijving) {
         this.beschrijving = beschrijving;
+    }
+
+    public void setKosten(double kosten) {
+        this.kosten = kosten;
     }
 
     public void setEssentieel(boolean essentieel) {

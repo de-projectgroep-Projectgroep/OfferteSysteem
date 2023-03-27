@@ -219,6 +219,8 @@ public class ObjectStorage {
 
         String beschrijving = Vragen.vraagString("Wat moet de beschrijving van de optie worden?");
 
+        double kosten = Vragen.vraagDouble("Wat zijn de kosten voor deze optie?");
+
         boolean essentieel = Vragen.vraagJaNee("Is dit een essentiële optie?");
 
         boolean milieuVriendelijk = Vragen.vraagJaNee("Is deze optie milieuvriendelijk?");
@@ -227,6 +229,7 @@ public class ObjectStorage {
         System.out.println("Er is een nieuw optie aangemaakt met de volgende gegevens:");
         System.out.println("Naam: " + naam);
         System.out.println("Beschrijving: " + beschrijving);
+        System.out.println("Kosten: €" + kosten);
 
         if (essentieel) {
             System.out.println("Categorie: " + "essentieël");
@@ -702,6 +705,17 @@ public class ObjectStorage {
                     }
                 }
 
+                if (input.equalsIgnoreCase("kosten")) {
+                    klaar = true;
+                    double nieuweWaarde = Vragen.vraagDouble("Wat moeten de nieuwe kosten worden?");
+
+                    if (Vragen.vraagJaNee("Weet u zeker dat u de kosten wilt wijzigen?")) {
+                        optie.setKosten(nieuweWaarde);
+                    } else {
+                        System.out.println("De kosten zijn niet gewijzigd.");
+                    }
+                }
+
                 if (input.equalsIgnoreCase("beschrijving")) {
                     klaar = true;
                     String nieuweWaarde = Vragen.vraagString("Wat moet de nieuwe beschrijving worden?");
@@ -737,7 +751,7 @@ public class ObjectStorage {
 
                 if (!klaar) {
                     System.out.println("Dit is geen gegeven dat u kan wijzigen.");
-                    System.out.println("U kan de gegevens naam, beschrijving, categorie en millieuvriendelijkheid wijzigen.");
+                    System.out.println("U kan de gegevens naam, beschrijving, kosten, categorie en millieuvriendelijkheid wijzigen.");
                     if (!Vragen.vraagJaNee("Wilt u een van deze gegevens wijzigen?")) {
                         klaar = true;
                     }
