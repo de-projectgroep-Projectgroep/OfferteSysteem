@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Schip {
-    public static ArrayList<Optie> opties = new ArrayList<Optie>();
+    private ArrayList<Optie> opties = new ArrayList<Optie>();
 
-    public static void addOptie() {
+    public void addOptie() {
         boolean uniekNaam = false;
         String naam = null;
         while (!uniekNaam) {
@@ -52,7 +52,7 @@ public class Schip {
         opties.add(new Optie(naam, beschrijving, kosten, essentieel, milieuVriendelijk));
     }
 
-    public static Optie getOptie() {
+    public Optie getOptie() {
         Optie optie = null;
         while (true) {
             String input = Vragen.vraagString("Wat is de naam van de optie?");
@@ -76,7 +76,7 @@ public class Schip {
         return optie;
     }
 
-    public static void removeOptie() {
+    public void removeOptie() {
         Optie optie = getOptie();
         if (optie != null) {
             if (Vragen.vraagJaNee("Weet u zeker dat u deze optie wilt verwijderen?")) {
@@ -87,7 +87,7 @@ public class Schip {
         }
     }
 
-    public static void editOptie() {
+    public void editOptie() {
         boolean klaar = false;
         Optie optie = getOptie();
 
@@ -177,7 +177,7 @@ public class Schip {
         }
     }
 
-    public static void printOpties() {
+    public void printOpties() {
         List<Optie> essentieleOpties = new ArrayList<>();
         List<Optie> extraOpties = new ArrayList<>();
 
@@ -200,7 +200,7 @@ public class Schip {
         }
     }
 
-    public static double milieuKorting() {
+    public double milieuKorting() {
         double korting = 0.0;
         for (Optie optie : opties) {
             if (optie.getMilieuVriendelijk()) {
