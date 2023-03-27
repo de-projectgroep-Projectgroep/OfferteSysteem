@@ -56,37 +56,4 @@ public class Optie {
     public void setMilieuVriendelijk(boolean milieuVriendelijk) {
         this.milieuVriendelijk = milieuVriendelijk;
     }
-
-    public static double milieuKorting() {
-        double korting = 0.0;
-        for (Optie optie : ObjectStorage.opties) {
-            if (optie.getMilieuVriendelijk()) {
-                korting += 0.1;
-            }
-        }
-        return korting;
-    }
-
-    public static void printOpties() {
-        List<Optie> essentieleOpties = new ArrayList<>();
-        List<Optie> extraOpties = new ArrayList<>();
-
-        for (Optie optie : ObjectStorage.opties) {
-            if (optie.getEssentieel()) {
-                essentieleOpties.add(optie);
-            } else {
-                extraOpties.add(optie);
-            }
-        }
-
-        System.out.println("Essentiële opties:");
-        for (Optie optie : essentieleOpties) {
-            System.out.println(optie.getNaam() + " - " + optie.getBeschrijving());
-        }
-
-        System.out.println("Extra opties:");
-        for (Optie optie : extraOpties) {
-            System.out.println(optie.getNaam() + " - " + optie.getBeschrijving());
-        }
-    }
 }
