@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bfca883-b626-48de-a475-67ea5f65d811" name="Changes" comment="code makkelijker gemaakt" />
+    <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="2de poging">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Optie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Optie.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -89,7 +95,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679683149370</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="2de poging">
+      <created>1679900986736</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679900986736</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,6 +120,7 @@
     <MESSAGE value="testfilemmdmdmdmd" />
     <MESSAGE value="code aangepast en verbeterd" />
     <MESSAGE value="code makkelijker gemaakt" />
-    <option name="LAST_COMMIT_MESSAGE" value="code makkelijker gemaakt" />
+    <MESSAGE value="2de poging" />
+    <option name="LAST_COMMIT_MESSAGE" value="2de poging" />
   </component>
 </project>

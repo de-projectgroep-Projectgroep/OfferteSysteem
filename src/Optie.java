@@ -81,12 +81,12 @@ public class Optie {
 
         System.out.println("Essentiële opties:");
         for (Optie optie : essentieleOpties) {
-            System.out.println(optie.getNaam() + " - " + optie.getBeschrijving());
+            System.out.println(optie.getNaam() + " - " + optie.getBeschrijving() + " - €" + optie.getKosten());
         }
 
         System.out.println("Extra opties:");
         for (Optie optie : extraOpties) {
-            System.out.println(optie.getNaam() + " - " + optie.getBeschrijving());
+            System.out.println(optie.getNaam() + " - " + optie.getBeschrijving() + " - €" + optie.getKosten());
         }
     }
 }
