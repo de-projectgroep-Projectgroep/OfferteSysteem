@@ -248,25 +248,24 @@ public class ObjectStorage {
 
     public static Klant getKlant() {
         Klant klant = null;
-        String input = null;
         boolean match = false;
 
         while (!match) {
-            input = Vragen.vraagString("Wat is de naam van de klant?");
-            for (int i = 0; i < klanten.size(); i++) {
-                if ((klanten.get(i).getNaam()).equals(input)) {
-                    klant = klanten.get(i);
+            String input = Vragen.vraagString("Wat is de naam van de klant?");
+            for (Klant value : klanten) {
+                if ((value.getNaam()).equals(input)) {
+                    klant = value;
+                    match = true;
+                    break;
                 }
             }
 
-            if (klant == null) {
+            if (!match) {
                 System.out.println("Deze klant staat niet in ons systeem.");
                 if (!Vragen.vraagJaNee("Wilt u nog een keer proberen de naam in te voeren?")) {
-                    match = true;
                     System.out.println("Het is niet gelukt om de klant te vinden.");
+                    break;
                 }
-            } else {
-                match = true;
             }
         }
         return klant;
