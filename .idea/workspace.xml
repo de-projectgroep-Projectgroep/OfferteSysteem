@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="Eerdere mergefout gefixed">
+    <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="editOptie(), getOptie() en getKlant() aangepast en meer leesbaar gemaakt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Klanttype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klanttype.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObjectStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObjectStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Schip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Schip.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,14 +123,7 @@
       <option name="project" value="LOCAL" />
       <updated>1679904170304</updated>
     </task>
-    <task id="LOCAL-00009" summary="Eerdere mergefout gefixed">
-      <created>1679908221250</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1679908221250</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,7 +145,6 @@
     <MESSAGE value="." />
     <MESSAGE value="Schip class toegevoegd" />
     <MESSAGE value="Fouten gefixed" />
-    <MESSAGE value="Eerdere mergefout gefixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Eerdere mergefout gefixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fouten gefixed" />
   </component>
 </project>
