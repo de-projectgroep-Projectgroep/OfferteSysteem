@@ -23,15 +23,15 @@ public class ObjectStorage {
                 uniekType = true;
             }
         }
-        int korting = Vragen.vraagInt("Hoeveel procent korting moet dit klanttype krijgen?");
+        int kortingsPercentage = Vragen.vraagInt("Hoeveel procent korting moet dit klanttype krijgen?");
 
         System.out.println("");
         System.out.println("Er is een nieuw klanttype aangemaakt met de volgende gegevens:");
         System.out.println("Type: " + type);
-        System.out.println("Korting: " + korting + "%");
+        System.out.println("Korting: " + kortingsPercentage + "%");
         System.out.println("");
 
-        klanttypes.add(new Klanttype(type, korting));
+        klanttypes.add(new Klanttype(type, kortingsPercentage));
     }
 
     public static void addPersoon() {
@@ -45,11 +45,11 @@ public class ObjectStorage {
         String email = null;
 
         while (!uniekType) {
-            email = Vragen.vraagString("Wat is de email van de persoon?");
+            email = Vragen.vraagString("Wat het emailadres van de persoon?");
             uniekCheck = 0;
             for (Persoon persoon : personen) {
                 if (persoon.getEmail().equals(email)) {
-                    System.out.println("Er staat al een persoon in ons systeem met dit emailadres.");
+                    System.out.println("Dit emailadres is al in gebruik.");
                     uniekCheck++;
                 }
             }
@@ -112,7 +112,7 @@ public class ObjectStorage {
             if (Vragen.vraagJaNee("Staat deze persoon al in ons systeem?")) {
                 persoon = getPersoon();
                 if (persoon == null) {
-                    if (Vragen.vraagJaNee("Wilt u een nieuwe persoon toevoegen aan ons systeem?")) {
+                    if (Vragen.vraagJaNee("Wilt u een nieuw persoon toevoegen aan ons systeem?")) {
                         addPersoon();
                         persoon = personen.get(personen.size() - 1);
                         persoonnaam = persoon.getVoornaam() + " " + persoon.getAchternaam();
@@ -345,7 +345,7 @@ public class ObjectStorage {
                 int nieuweWaarde = Vragen.vraagInt("Wat moet het nieuwe kortingspercentage worden?");
 
                 if (Vragen.vraagJaNee("Weet u zeker dat u het kortingspercentage wilt wijzigen?")) {
-                    klanttype.setKorting(nieuweWaarde);
+                    klanttype.setKortingsPercentage(nieuweWaarde);
                 } else {
                     System.out.println("Het kortingspercentage is niet gewijzigd.");
                 }
@@ -353,7 +353,7 @@ public class ObjectStorage {
 
             if (!klaar) {
                 System.out.println("Dit is geen gegeven dat u kan wijzigen.");
-                System.out.println("U kan de gegevens type en korting wijzigen.");
+                System.out.println("U kunt de gegevens type en korting wijzigen.");
                 if (!Vragen.vraagJaNee("Wilt u een van deze gegevens wijzigen?")) {
                     klaar = true;
                 }
@@ -470,7 +470,7 @@ public class ObjectStorage {
 
                 if (!klaar) {
                     System.out.println("Dit is geen gegeven dat u kan wijzigen.");
-                    System.out.println("U kan de gegevens voornaam, achternaam, geboortedatum, email, telefoonnummer en adres wijzigen.");
+                    System.out.println("U kunt de gegevens voornaam, achternaam, geboortedatum, email, telefoonnummer en adres wijzigen.");
                     if (!Vragen.vraagJaNee("Wilt u een van deze gegevens wijzigen?")) {
                         klaar = true;
                     }
@@ -576,7 +576,7 @@ public class ObjectStorage {
 
                 if (!klaar) {
                     System.out.println("Dit is geen gegeven dat u kan wijzigen.");
-                    System.out.println("U kan de gegevens klanttype, naam, email, telefoonnummer en (contact)persoon wijzigen.");
+                    System.out.println("U kunt de gegevens klanttype, naam, email, telefoonnummer en (contact)persoon wijzigen.");
                     if (!Vragen.vraagJaNee("Wilt u een van deze gegevens wijzigen?")) {
                         klaar = true;
                     }

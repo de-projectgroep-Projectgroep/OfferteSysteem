@@ -1,10 +1,10 @@
 class Klanttype {
     private String type;
-    private int korting;
+    private int kortingsPercentage;
 
-    Klanttype(String type, int korting) {
+    Klanttype(String type, int kortingsPercentage) {
         this.type = type;
-        this.korting = korting;
+        this.kortingsPercentage = kortingsPercentage;
     }
 
 
@@ -12,8 +12,8 @@ class Klanttype {
         return this.type;
     }
 
-    public int getKorting() {
-        return this.korting;
+    public int getKortingsPercentage() {
+        return this.kortingsPercentage;
     }
 
 
@@ -21,7 +21,7 @@ class Klanttype {
         this.type = type;
     }
 
-    public void setKorting(int korting) {
-        this.korting = korting;
+    public void setKortingsPercentage(int korting) {
+        this.kortingsPercentage = kortingsPercentage;
     }
 }
