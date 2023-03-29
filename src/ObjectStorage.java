@@ -312,7 +312,7 @@ public class ObjectStorage {
         while (!klaar) {
             input = Vragen.vraagString("Wat wilt u aanpassen?");
 
-            if (input.equals("type") || input.equals("Type")) {
+            if (input.equalsIgnoreCase("type")) {
                 klaar = true;
                 String nieuweWaarde = "";
 
@@ -340,7 +340,7 @@ public class ObjectStorage {
                 }
             }
 
-            if (input.equals("korting") || input.equals("Korting")) {
+            if (input.equalsIgnoreCase("korting")) {
                 klaar = true;
                 int nieuweWaarde = Vragen.vraagInt("Wat moet het nieuwe kortingspercentage worden?");
 
@@ -370,7 +370,7 @@ public class ObjectStorage {
             while (!klaar) {
                 input = Vragen.vraagString("Wat wilt u aanpassen?");
 
-                if (input.equals("email") || input.equals("Email")) {
+                if (input.equalsIgnoreCase("email")) {
                     klaar = true;
                     boolean uniekType = false;
                     int uniekCheck;
@@ -397,7 +397,7 @@ public class ObjectStorage {
                     }
                 }
 
-                if (input.equals("telefoonnummer") || input.equals("Telefoonnummer")) {
+                if (input.equalsIgnoreCase("telefoonnummer")) {
                     klaar = true;
                     boolean uniekType = false;
                     int uniekCheck;
@@ -424,7 +424,7 @@ public class ObjectStorage {
                     }
                 }
 
-                if (input.equals("voornaam") || input.equals("Voornaam")) {
+                if (input.equalsIgnoreCase("voornaam")) {
                     klaar = true;
                     String nieuweWaarde = Vragen.vraagString("Wat moet de nieuwe voornaam worden?");
 
@@ -435,7 +435,7 @@ public class ObjectStorage {
                     }
                 }
 
-                if (input.equals("achternaam") || input.equals("Achternaam")) {
+                if (input.equalsIgnoreCase("achternaam")) {
                     klaar = true;
                     String nieuweWaarde = Vragen.vraagString("Wat moet de nieuwe achternaam worden?");
 
@@ -446,7 +446,7 @@ public class ObjectStorage {
                     }
                 }
 
-                if (input.equals("geboortedatum") || input.equals("Geboortedatum")) {
+                if (input.equalsIgnoreCase("geboortedatum")) {
                     klaar = true;
                     String nieuweWaarde = Vragen.vraagString("Wat moet de nieuwe geboortedatum worden?");
 
@@ -457,7 +457,7 @@ public class ObjectStorage {
                     }
                 }
 
-                if (input.equals("adres") || input.equals("Adres")) {
+                if (input.equalsIgnoreCase("adres")) {
                     klaar = true;
                     String nieuweWaarde = Vragen.vraagString("Wat moet het nieuwe adres worden?");
 
@@ -488,7 +488,7 @@ public class ObjectStorage {
             while (!klaar) {
                 input = Vragen.vraagString("Wat wilt u aanpassen?");
 
-                if (input.equals("naam") || input.equals("Naam")) {
+                if (input.equalsIgnoreCase("naam")) {
                     klaar = true;
                     boolean uniekType = false;
                     int uniekCheck;
@@ -515,7 +515,7 @@ public class ObjectStorage {
                     }
                 }
 
-                if (input.equals("email") || input.equals("Email")) {
+                if (input.equalsIgnoreCase("email")) {
                     klaar = true;
                     String nieuweWaarde = Vragen.vraagString("Wat moet het nieuwe emailadres worden?");
 
@@ -526,7 +526,7 @@ public class ObjectStorage {
                     }
                 }
 
-                if (input.equals("telefoonnummer") || input.equals("Telefoonnummer")) {
+                if (input.equalsIgnoreCase("telefoonnummer")) {
                     klaar = true;
                     String nieuweWaarde = Vragen.vraagString("Wat moet het nieuwe telefoonnummer worden?");
 
@@ -537,7 +537,7 @@ public class ObjectStorage {
                     }
                 }
 
-                if (input.equals("klanttype") || input.equals("Klanttype")) {
+                if (input.equalsIgnoreCase("klanttype")) {
                     klaar = true;
                     Klanttype nieuweWaarde = getKlanttype();
 
@@ -548,7 +548,7 @@ public class ObjectStorage {
                     }
                 }
 
-                if (input.equals("persoon") || input.equals("Persoon") || input.equals("contactpersoon") || input.equals("Contactpersoon") || input.equals("(contact)persoon") || input.equals("(Contact)persoon")) {
+                if (input.equalsIgnoreCase("persoon") || input.equalsIgnoreCase("contactpersoon") || input.equalsIgnoreCase("(contact)persoon")) {
                     klaar = true;
                     Persoon nieuweWaarde;
 
