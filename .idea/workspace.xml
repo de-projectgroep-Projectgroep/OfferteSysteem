@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="mergefout gefixed">
+    <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="Eerdere mergefout gefixed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Schip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Schip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Klanttype.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Klanttype.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ObjectStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObjectStorage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,13 +42,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/JavaProjects/Java-Projects/OfferteSysteem&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marti/Documents/GitHub/OfferteSysteem&quot;
   }
 }</component>
   <component name="RunManager">
@@ -72,9 +67,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1678364105586</updated>
-      <workItem from="1680175142743" duration="1014000" />
-      <workItem from="1680189128387" duration="43000" />
-      <workItem from="1680504447634" duration="2060000" />
     </task>
     <task id="LOCAL-00001" summary="testfilemmdmdmdmd">
       <created>1678365338444</created>
@@ -132,18 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1679904170304</updated>
     </task>
-    <task id="LOCAL-00009" summary="mergefout gefixed">
-      <created>1680004750028</created>
+    <task id="LOCAL-00009" summary="Eerdere mergefout gefixed">
+      <created>1679908221250</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1680004750028</updated>
+      <updated>1679908221250</updated>
     </task>
     <option name="localTasksCounter" value="10" />
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -164,7 +153,7 @@
     <MESSAGE value="." />
     <MESSAGE value="Schip class toegevoegd" />
     <MESSAGE value="Fouten gefixed" />
-    <MESSAGE value="mergefout gefixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="mergefout gefixed" />
+    <MESSAGE value="Eerdere mergefout gefixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Eerdere mergefout gefixed" />
   </component>
 </project>
