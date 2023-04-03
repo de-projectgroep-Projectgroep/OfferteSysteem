@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Schip {
-    private ArrayList<Optie> opties = new ArrayList<>();
+    private ArrayList<Optie> opties = new ArrayList<Optie>();
 
     public void addOptie() {
         boolean uniekNaam = false;
@@ -30,7 +30,7 @@ public class Schip {
 
         boolean milieuVriendelijk = Vragen.vraagJaNee("Is deze optie milieuvriendelijk?");
 
-        System.out.println();
+        System.out.println("");
         System.out.println("Er is een nieuw optie aangemaakt met de volgende gegevens:");
         System.out.println("Naam: " + naam);
         System.out.println("Beschrijving: " + beschrijving);
@@ -47,31 +47,33 @@ public class Schip {
         } else {
             System.out.println("Milieuvriendelijk: " + "nee");
         }
-        System.out.println();
+        System.out.println("");
 
         opties.add(new Optie(naam, beschrijving, kosten, essentieel, milieuVriendelijk));
     }
 
     public Optie getOptie() {
         Optie optie = null;
-        boolean match = false;
-        while (!match) {
+        while (true) {
             String input = Vragen.vraagString("Wat is de naam van de optie?");
             for (Optie x : opties) {
                 if ((x.getNaam()).equals(input)) {
                     optie = x;
-                    match = true;
                     break;
                 }
             }
 
-            if (!match)
-                System.out.println("Er is geen optie met de naam " + input + " in ons systeem gevonden.");
-            if (!Vragen.vraagJaNee("Wilt u nog een keer proberen de naam van de optie in te voeren?")) {
-                System.out.println("Het is niet gelukt om de optie te vinden.");
+            if (optie != null) {
                 break;
+            } else {
+                System.out.println("Er is geen optie met de naam " + input + " in ons systeem gevonden.");
+                if (!Vragen.vraagJaNee("Wilt u nog een keer proberen de naam van de optie in te voeren?")) {
+                    System.out.println("Het is niet gelukt om de optie te vinden.");
+                    break;
+                }
             }
-        }return optie;
+        }
+        return optie;
     }
 
     public void removeOptie() {
@@ -89,23 +91,21 @@ public class Schip {
         boolean klaar = false;
         Optie optie = getOptie();
 
-        if (optie == null) {
-            return;
-        }
+        if (optie != null) {
+            while (!klaar) {
+                String input = Vragen.vraagString("Wat wilt u aanpassen?");
 
-        while (!klaar) {
-            String input = Vragen.vraagString("Wat wilt u aanpassen?");
-
-            switch (input.toLowerCase()) {
-                case "naam" -> {
+                if (input.equalsIgnoreCase("naam")) {
+                    klaar = true;
                     boolean uniekType = false;
                     int uniekCheck;
-                    String nieuweNaam = null;
+                    String nieuweWaarde = null;
+
                     while (!uniekType) {
-                        nieuweNaam = Vragen.vraagString("Wat is de nieuwe naam van de optie?");
+                        nieuweWaarde = Vragen.vraagString("Wat is de nieuwe naam van de optie?");
                         uniekCheck = 0;
                         for (Optie x : opties) {
-                            if (x.getNaam().equals(nieuweNaam)) {
+                            if (optie.getNaam().equals(nieuweWaarde)) {
                                 System.out.println("Er staat al een optie in ons systeem met deze naam.");
                                 uniekCheck++;
                             }
@@ -114,50 +114,59 @@ public class Schip {
                             uniekType = true;
                         }
                     }
+
                     if (Vragen.vraagJaNee("Weet u zeker dat u deze naam wilt wijzigen?")) {
-                        optie.setNaam(nieuweNaam);
+                        optie.setNaam(nieuweWaarde);
                     } else {
                         System.out.println("De naam is niet gewijzigd.");
                     }
-                    klaar = true;
                 }
-                case "beschrijving" -> {
-                    String nieuweBeschrijving = Vragen.vraagString("Wat moet de nieuwe beschrijving worden?");
+
+                if (input.equalsIgnoreCase("beschrijving")) {
+                    klaar = true;
+                    String nieuweWaarde = Vragen.vraagString("Wat moet de nieuwe beschrijving worden?");
+
                     if (Vragen.vraagJaNee("Weet u zeker dat u de beschrijving wilt wijzigen?")) {
-                        optie.setBeschrijving(nieuweBeschrijving);
+                        optie.setBeschrijving(nieuweWaarde);
                     } else {
                         System.out.println("De beschrijving is niet gewijzigd.");
                     }
-                    klaar = true;
                 }
-                case "kosten" -> {
-                    double nieuweKosten = Vragen.vraagDouble("Wat moet de nieuwe kosten worden?");
+
+                if (input.equalsIgnoreCase("kosten")) {
+                    klaar = true;
+                    double nieuweWaarde = Vragen.vraagDouble("Wat moet de nieuwe kosten worden?");
+
                     if (Vragen.vraagJaNee("Weet u zeker dat u de kosten wilt wijzigen?")) {
-                        optie.setKosten(nieuweKosten);
+                        optie.setKosten(nieuweWaarde);
                     } else {
                         System.out.println("De kosten zijn niet gewijzigd.");
                     }
-                    klaar = true;
                 }
-                case "categorie" -> {
-                    boolean nieuweCategorie = Vragen.vraagJaNee("Moet dit een essentiële optie worden?");
+
+                if (input.equalsIgnoreCase("categorie")) {
+                    klaar = true;
+                    boolean nieuweWaarde = Vragen.vraagJaNee("Moet dit een essentiële optie worden?");
+
                     if (Vragen.vraagJaNee("Weet u zeker dat u de categorie wilt wijzigen?")) {
-                        optie.setEssentieel(nieuweCategorie);
+                        optie.setEssentieel(nieuweWaarde);
                     } else {
                         System.out.println("De categorie is niet gewijzigd.");
                     }
-                    klaar = true;
                 }
-                case "milieuvriendelijkheid" -> {
-                    boolean nieuweMilieuVriendelijkheid = Vragen.vraagJaNee("Is deze optie millieuvriendelijk?");
+
+                if (input.equalsIgnoreCase("milieuvriendelijkheid")) {
+                    klaar = true;
+                    boolean nieuweWaarde = Vragen.vraagJaNee("Is deze optie millieuvriendelijk?");
+
                     if (Vragen.vraagJaNee("Weet u zeker dat u de milieuvriendelijkheid wilt wijzigen?")) {
-                        optie.setMilieuVriendelijk(nieuweMilieuVriendelijkheid);
+                        optie.setMilieuVriendelijk(nieuweWaarde);
                     } else {
                         System.out.println("De milieuvriendelijkheid is niet gewijzigd.");
                     }
-                    klaar = true;
                 }
-                default -> {
+
+                if (!klaar) {
                     System.out.println("Dit is geen gegeven dat u kan wijzigen.");
                     System.out.println("U kan de gegevens naam, beschrijving, kosten, categorie en millieuvriendelijkheid wijzigen.");
                     if (!Vragen.vraagJaNee("Wilt u een van deze gegevens wijzigen?")) {
