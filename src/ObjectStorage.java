@@ -5,6 +5,7 @@ abstract class ObjectStorage {
     public static ArrayList<Klanttype> klanttypes = new ArrayList<Klanttype>();
     public static ArrayList<Persoon> personen = new ArrayList<Persoon>();
     public static ArrayList<Klant> klanten = new ArrayList<Klant>();
+    public static ArrayList<Schip> schepen = new ArrayList<Schip>();
 
     public static void addKlanttype() {
         boolean uniekType = false;
