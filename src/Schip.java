@@ -17,18 +17,23 @@ public class Schip {
     public String getNaam() {
         return naam;
     }
+
     public String getBeschrijving() {
         return beschrijving;
     }
+
     public String getMotor() {
         return motor;
     }
+
     public void setNaam(String naam) {
         this.naam = naam;
     }
+
     public void setBeschrijving(String beschrijving) {
         this.beschrijving = beschrijving;
     }
+
     public void setMotor(String motor) {
         this.motor = motor;
     }
@@ -59,6 +64,11 @@ public class Schip {
 
         boolean milieuVriendelijk = Vragen.vraagJaNee("Is deze optie milieuvriendelijk?");
 
+        int milieuKorting = 0;
+        if (milieuVriendelijk) {
+            milieuKorting = Vragen.vraagInt("Wat is het percentage korting voor deze milieuvriendelijke optie?");
+        }
+
         System.out.println("");
         System.out.println("Er is een nieuw optie aangemaakt met de volgende gegevens:");
         System.out.println("Naam: " + naam);
@@ -76,9 +86,13 @@ public class Schip {
         } else {
             System.out.println("Milieuvriendelijk: " + "nee");
         }
+
+        if (milieuVriendelijk) {
+            System.out.println("Korting: " + milieuKorting + "%");
+        }
         System.out.println("");
 
-        opties.add(new Optie(naam, beschrijving, kosten, essentieel, milieuVriendelijk));
+        opties.add(new Optie(naam, beschrijving, kosten, essentieel, milieuVriendelijk, milieuKorting));
     }
 
     public Optie getOptie() {
@@ -179,6 +193,20 @@ public class Schip {
                         optie.setMilieuVriendelijk(nieuweMilieuVriendelijkheid);
                     } else {
                         System.out.println("De milieuvriendelijkheid is niet gewijzigd.");
+                    }
+                    return;
+                }
+
+                case "milieu korting" -> {
+                    if (optie.getMilieuVriendelijk()) {
+                        int nieuweMilieuKorting = Vragen.vraagInt("Wat moet de nieuwe milieu korting worden?");
+                        if (Vragen.vraagJaNee("Weet u zeker dat u de milieu korting wilt wijzigen?")) {
+                            optie.setMilieuKorting(nieuweMilieuKorting);
+                        } else {
+                            System.out.println("De milieu korting is niet gewijzigd.");
+                        }
+                    } else {
+                        System.out.println("Deze optie is niet milieuvriendelijk.");
                     }
                     return;
                 }
@@ -357,15 +385,5 @@ public class Schip {
         for (Schip schip : schepen) {
             System.out.println(schip.getNaam() + " - " + schip.getBeschrijving() + " - " + schip.getMotor());
         }
-    }
-
-    public double milieuKorting() {
-        double korting = 0.0;
-        for (Optie optie : opties) {
-            if (optie.getMilieuVriendelijk()) {
-                korting += 0.1;
-            }
-        }
-        return korting;
     }
 }
