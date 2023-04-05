@@ -3,7 +3,7 @@ import java.util.List;
 
 public class Schip {
     private ArrayList<Optie> opties = new ArrayList<Optie>();
-    private ArrayList<Schip> schepen = new ArrayList<Schip>();
+    private static ArrayList<Schip> schepen = new ArrayList<Schip>();
     private String naam;
     private String beschrijving;
     private String motor;
@@ -247,7 +247,7 @@ public class Schip {
 
     // Manage schepen
 
-    public void addSchip() {
+    public static void addSchip() {
         boolean uniekNaam = false;
         String naam = null;
         while (!uniekNaam) {
@@ -277,7 +277,7 @@ public class Schip {
         schepen.add(new Schip(naam, beschrijving, motor));
     }
 
-    public Schip getSchip() {
+    public static Schip getSchip() {
         Schip schip = null;
         while (true) {
             String input = Vragen.vraagString("Wat is de naam van het schip?");
@@ -301,7 +301,7 @@ public class Schip {
         return schip;
     }
 
-    public void removeSchip() {
+    public static void removeSchip() {
         Schip schip = getSchip();
         if (schip != null) {
             if (Vragen.vraagJaNee("Weet u zeker dat u deze optie wilt verwijderen?")) {
@@ -312,7 +312,7 @@ public class Schip {
         }
     }
 
-    public void editSchip() {
+    public static void editSchip() {
         boolean klaar = false;
         Schip schip = getSchip();
 
