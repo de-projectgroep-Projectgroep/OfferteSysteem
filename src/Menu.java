@@ -10,7 +10,8 @@ public class Menu {
             System.out.println("2. Schip beheren");
             System.out.println("3. Persoon beheren");
             System.out.println("4. Klanttype beheren");
-            System.out.println("5. Afsluiten");
+            System.out.println("5. Totaalprijs berekenen");
+            System.out.println("6. Afsluiten");
             int keuze = scanner.nextInt();
             scanner.nextLine();
 
@@ -87,7 +88,20 @@ public class Menu {
                         default -> System.out.println("Ongeldige keuze");
                     }
                 }
+
                 case 5 -> {
+                    Klant klant = ObjectStorage.getKlant();
+                    Schip schip = ObjectStorage.getSchip();
+
+                    if (klant != null && schip != null) {
+                        System.out.println("De totaalprijs is: " + Totaalprijs.berekenTotaalPrijs(klant, schip));
+                    }
+                    else {
+                        System.out.println("Klant of schip niet gevonden.");
+                    }
+                }
+
+                case 6 -> {
                     System.out.println("Afsluiten");
                     doorgaan = false;
                 }
