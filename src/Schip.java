@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Schip {
-    private ArrayList<Optie> opties = new ArrayList<Optie>();
+    public ArrayList<Optie> opties = new ArrayList<Optie>();
     private static ArrayList<Schip> schepen = new ArrayList<Schip>();
     private String naam;
     private String beschrijving;

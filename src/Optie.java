@@ -8,16 +8,16 @@ public class Optie {
     private double kosten;
     private boolean essentieel;
     private boolean milieuVriendelijk;
-    private int milieuKorting;
+    private int milieuKortingsPercentage;
 
-    public Optie(String naam, String beschrijving, double kosten, boolean essentieel, boolean milieuVriendelijk, int milieuKorting) {
+    public Optie(String naam, String beschrijving, double kosten, boolean essentieel, boolean milieuVriendelijk, int milieuKortingsPercentage) {
 
         this.naam = naam;
         this.beschrijving = beschrijving;
         this.kosten = kosten;
         this.essentieel = essentieel;
         this.milieuVriendelijk = milieuVriendelijk;
-        this.milieuKorting = milieuKorting;
+        this.milieuKortingsPercentage = milieuKortingsPercentage;
     }
 
     public String getNaam() {
@@ -40,8 +40,8 @@ public class Optie {
         return milieuVriendelijk;
     }
 
-    public int getMilieuKorting() {
-        return milieuKorting;
+    public int getMilieuKortingsPercentage() {
+        return milieuKortingsPercentage;
     }
 
     public void setNaam(String naam) {
@@ -62,7 +62,7 @@ public class Optie {
     public void setMilieuVriendelijk(boolean milieuVriendelijk) {
         this.milieuVriendelijk = milieuVriendelijk;
     }
-    public void setMilieuKorting(int milieuKorting) {
-        this.milieuKorting = milieuKorting;
+    public void setMilieuKortingsPercentage(int milieuKortingsPercentage) {
+        this.milieuKortingsPercentage = milieuKortingsPercentage;
     }
 }
