@@ -64,9 +64,9 @@ public class Schip {
 
         boolean milieuVriendelijk = Vragen.vraagJaNee("Is deze optie milieuvriendelijk?");
 
-        int milieuKorting = 0;
+        int milieuKortingspercentage = 0;
         if (milieuVriendelijk) {
-            milieuKorting = Vragen.vraagInt("Wat is het percentage korting voor deze milieuvriendelijke optie?");
+            milieuKortingspercentage = Vragen.vraagInt("Wat is het percentage korting voor deze milieuvriendelijke optie?");
         }
 
         System.out.println("");
@@ -83,16 +83,14 @@ public class Schip {
 
         if (milieuVriendelijk) {
             System.out.println("Milieuvriendelijk: " + "ja");
+            System.out.println("Korting: " + milieuKortingspercentage + "%");
         } else {
             System.out.println("Milieuvriendelijk: " + "nee");
         }
 
-        if (milieuVriendelijk) {
-            System.out.println("Korting: " + milieuKorting + "%");
-        }
         System.out.println("");
 
-        opties.add(new Optie(naam, beschrijving, kosten, essentieel, milieuVriendelijk, milieuKorting));
+        opties.add(new Optie(naam, beschrijving, kosten, essentieel, milieuVriendelijk, milieuKortingspercentage));
     }
 
     public Optie getOptie() {
@@ -197,13 +195,13 @@ public class Schip {
                     return;
                 }
 
-                case "milieu korting" -> {
+                case "milieukortingspercentage" -> {
                     if (optie.getMilieuVriendelijk()) {
-                        int nieuweMilieuKorting = Vragen.vraagInt("Wat moet de nieuwe milieu korting worden?");
-                        if (Vragen.vraagJaNee("Weet u zeker dat u de milieu korting wilt wijzigen?")) {
+                        int nieuweMilieuKorting = Vragen.vraagInt("Wat moet het nieuwe milieukortingspercentage worden?");
+                        if (Vragen.vraagJaNee("Weet u zeker dat u het milieukortingspercentage wilt wijzigen?")) {
                             optie.setMilieuKortingsPercentage(nieuweMilieuKorting);
                         } else {
-                            System.out.println("De milieu korting is niet gewijzigd.");
+                            System.out.println("Het milieukortingspercentage is niet gewijzigd.");
                         }
                     } else {
                         System.out.println("Deze optie is niet milieuvriendelijk.");
@@ -213,7 +211,7 @@ public class Schip {
 
                 default -> {
                     System.out.println("Dit is geen gegeven dat u kan wijzigen.");
-                    System.out.println("U kan de gegevens naam, beschrijving, categorie en milieuvriendelijkheid wijzigen.");
+                    System.out.println("U kan de gegevens naam, beschrijving, categorie, milieuvriendelijkheid en milieukortingspercentage wijzigen.");
                     if (!Vragen.vraagJaNee("Wilt u een van deze gegevens wijzigen?")) {
                         return;
                     }
