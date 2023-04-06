@@ -44,10 +44,10 @@ public class Menu {
                     scanner.nextLine();
 
                     switch (keuzeSchip) {
-                        case 1 -> Schip.addSchip();
-                        case 2 -> Schip.editSchip();
-                        case 3 -> Schip.removeSchip();
-                        case 4 -> Schip.getSchip();
+                        case 1 -> ObjectStorage.addSchip();
+                        case 2 -> ObjectStorage.editSchip();
+                        case 3 -> ObjectStorage.removeSchip();
+                        case 4 -> ObjectStorage.getSchip();
                         default -> System.out.println("Ongeldige keuze");
                     }
                 }
