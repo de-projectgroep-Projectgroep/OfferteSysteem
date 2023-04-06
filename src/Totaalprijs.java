@@ -18,4 +18,3 @@ public class Totaalprijs {
         return totaalprijs; // dit is inclusief korting
     }
 }
-

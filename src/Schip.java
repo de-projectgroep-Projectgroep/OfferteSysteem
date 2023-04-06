@@ -201,7 +201,7 @@ public class Schip {
                     if (optie.getMilieuVriendelijk()) {
                         int nieuweMilieuKorting = Vragen.vraagInt("Wat moet de nieuwe milieu korting worden?");
                         if (Vragen.vraagJaNee("Weet u zeker dat u de milieu korting wilt wijzigen?")) {
-                            optie.setMilieuKorting(nieuweMilieuKorting);
+                            optie.setMilieuKortingsPercentage(nieuweMilieuKorting);
                         } else {
                             System.out.println("De milieu korting is niet gewijzigd.");
                         }
