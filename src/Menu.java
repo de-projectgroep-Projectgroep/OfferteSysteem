@@ -22,6 +22,7 @@ public class Menu {
                     System.out.println("2. Klant wijzigen");
                     System.out.println("3. Klant verwijderen");
                     System.out.println("4. Klant zoeken");
+                    System.out.println("5. Klanten printen");
 
                     int keuzeKlant = scanner.nextInt();
                     scanner.nextLine();
@@ -31,6 +32,7 @@ public class Menu {
                         case 2 -> ObjectStorage.editKlant();
                         case 3 -> ObjectStorage.removeKlant();
                         case 4 -> ObjectStorage.getKlant();
+                        case 5 -> ObjectStorage.printKlanten();
                         default -> System.out.println("Ongeldige keuze");
                     }
                 }
@@ -40,6 +42,7 @@ public class Menu {
                     System.out.println("2. Schip wijzigen");
                     System.out.println("3. Schip verwijderen");
                     System.out.println("4. Schip zoeken");
+                    System.out.println("5. Schepen printen");
 
                     int keuzeSchip = scanner.nextInt();
                     scanner.nextLine();
@@ -49,6 +52,7 @@ public class Menu {
                         case 2 -> ObjectStorage.editSchip();
                         case 3 -> ObjectStorage.removeSchip();
                         case 4 -> ObjectStorage.getSchip();
+                        case 5 -> ObjectStorage.printSchepen();
                         default -> System.out.println("Ongeldige keuze");
                     }
                 }
@@ -58,6 +62,7 @@ public class Menu {
                     System.out.println("2. Persoon wijzigen");
                     System.out.println("3. Persoon verwijderen");
                     System.out.println("4. Persoon zoeken");
+                    System.out.println("5. Personen printen");
 
                     int keuzePersoon = scanner.nextInt();
                     scanner.nextLine();
@@ -67,6 +72,7 @@ public class Menu {
                         case 2 -> ObjectStorage.editPersoon();
                         case 3 -> ObjectStorage.removePersoon();
                         case 4 -> ObjectStorage.getPersoon();
+                        case 5 -> ObjectStorage.printPersonen();
                         default -> System.out.println("Ongeldige keuze");
                     }
                 }
@@ -76,6 +82,7 @@ public class Menu {
                     System.out.println("2. Klanttype wijzigen");
                     System.out.println("3. Klanttype verwijderen");
                     System.out.println("4. Klanttype zoeken");
+                    System.out.println("5. Klanttypes printen");
 
                     int keuzeKlanttype = scanner.nextInt();
                     scanner.nextLine();
@@ -85,6 +92,7 @@ public class Menu {
                         case 2 -> ObjectStorage.editKlanttype();
                         case 3 -> ObjectStorage.removeKlanttype();
                         case 4 -> ObjectStorage.getKlanttype();
+                        case 5 -> ObjectStorage.printKlanttypes();
                         default -> System.out.println("Ongeldige keuze");
                     }
                 }
@@ -107,7 +115,6 @@ public class Menu {
                 }
                 default -> System.out.println("Ongeldige keuze");
             }
-
         }
     }
 }

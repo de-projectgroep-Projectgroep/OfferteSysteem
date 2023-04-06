@@ -46,7 +46,7 @@ abstract class ObjectStorage {
         String email = null;
 
         while (!uniekType) {
-            email = Vragen.vraagString("Wat het emailadres van de persoon?");
+            email = Vragen.vraagString("Wat is het emailadres van de persoon?");
             uniekCheck = 0;
             for (Persoon persoon : personen) {
                 if (persoon.getEmail().equals(email)) {
@@ -716,6 +716,28 @@ abstract class ObjectStorage {
                     }
                 }
             }
+        }
+    }
+
+    public static void printKlanttypes() {
+        for (Klanttype x : klanttypes) {
+            System.out.println(x);
+        }
+    }
+    public static void printPersonen() {
+        for (Persoon x : personen) {
+            System.out.println(x);
+        }
+    }
+    public static void printKlanten() {
+        for (Klant x : klanten) {
+            System.out.println(x);
+        }
+    }
+    public static void printSchepen() {
+        System.out.println("Schepen:");
+        for (Schip schip : schepen) {
+            System.out.println(schip.getNaam() + " - " + schip.getBeschrijving() + " - " + schip.getMotor());
         }
     }
 }

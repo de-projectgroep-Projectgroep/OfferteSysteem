@@ -242,11 +242,4 @@ public class Schip {
             System.out.println(optie.getNaam() + " - " + optie.getBeschrijving() + " - €" + optie.getKosten());
         }
     }
-
-    public void printSchepen() {
-        System.out.println("Schepen:");
-        for (Schip schip : schepen) {
-            System.out.println(schip.getNaam() + " - " + schip.getBeschrijving() + " - " + schip.getMotor());
-        }
-    }
 }
