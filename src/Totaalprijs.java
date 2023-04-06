@@ -1,38 +1,18 @@
-///public class Totaalprijs {
-    /*
-     totaalprijs
-     automatisch berekenen op basis klanttype en geselecteerde opties
-     gemakkelijke interface
-     korting: klanttype.java
-    */
-}
-
+import java.util.ArrayList;
 
 public class Totaalprijs {
-
-    private Klanttype klanttype;
-    private Set<Option> geselecteerdeOpties;
-
-    public Totaalprijs(Klanttype klanttype, Set<Option> geselecteerdeOpties) {
-        this.klanttype = klanttype;
-        this.geselecteerdeOpties = geselecteerdeOpties;
-    }
-
-    public double berekenTotaalprijs() {
-        double totaalprijs = 0.0;
-        double optieprijs = 0.0;
-
-        for (Option optie : geselecteerdeOpties) {
-            optieprijs += optie.getPrijs();
+    public static double berekenTotaalPrijs(Klant klant, Schip schip) { //importeren uit de andere classes
+        ArrayList<Optie> opties = schip.getOpties();
+        double totaal = 0;
+        for (Optie optie : opties) {
+            totaal += optie.getPrijs();
         }
-
-        if (klanttype instanceof Bedrijfsklant) {
-            totaalprijs += optieprijs * 0.9; // 10% korting voor bedrijfsklanten
-        } else if (klanttype instanceof ParticuliereKlant) {
-            totaalprijs += optieprijs;
+        if (schip.getMilieuKlasse() == 1) {
+            totaal *= 0.95;  // milleukorting kan hier aangepast worden
         }
-
-        return totaalprijs;
+        Klanttype klanttype = klant.getKlanttype();
+        double totaalprijs = totaal * klanttype.getKorting();  // if statement weggehaald en korting direct toegepast
+        return totaalprijs; // dit is inclusief korting
     }
-
 }
+
