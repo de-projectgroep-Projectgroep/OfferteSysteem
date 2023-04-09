@@ -720,18 +720,18 @@ abstract class ObjectStorage {
     }
 
     public static void printKlanttypes() {
-        for (Klanttype x : klanttypes) {
-            System.out.println(x);
+        for (Klanttype klanttype : klanttypes) {
+            System.out.println(klanttype.getType() + " - " + klanttype.getKortingsPercentage() + "%");
         }
     }
     public static void printPersonen() {
-        for (Persoon x : personen) {
-            System.out.println(x);
+        for (Persoon persoon : personen) {
+            System.out.println(persoon.getVoornaam() + " " + persoon.getAchternaam() + " - " + persoon.getGeboortedatum() + " - " + persoon.getEmail() + " - " + persoon.getTelefoonnummer() + " - " + persoon.getAdres());
         }
     }
     public static void printKlanten() {
-        for (Klant x : klanten) {
-            System.out.println(x);
+        for (Klant klant : klanten) {
+            System.out.println(klant.getNaam() + " - " + klant.getKlanttype().getType() + " - " + klant.getEmail() + " - " + klant.getTelefoonnummer());
         }
     }
     public static void printSchepen() {
