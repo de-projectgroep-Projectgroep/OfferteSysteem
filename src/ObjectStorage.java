@@ -730,7 +730,31 @@ abstract class ObjectStorage {
 
                 if (input.equalsIgnoreCase("optie") || input.equalsIgnoreCase("opties")) {
                     klaar = true;
+                    boolean klaar2 = false;
+                    System.out.println("Kies een optie:");
+                    System.out.println("1. Optie toevoegen");
+                    System.out.println("2. Optie aanpassen");
+                    System.out.println("3. Optie verwijderen");
+                    System.out.println("4. Klaar");
                     Schip.editOptie();
+
+                    int keuze = Vragen.vraagInt("");
+
+                    switch (keuze) {
+                        case 1 -> {
+                            schip.addOptie();
+                        }
+                        case 2 -> {
+                            schip.editOptie();
+                        }
+                        case 3 -> {
+                            schip.removeOptie();
+                        }
+                        case 4 -> {
+                            break;
+                        }
+                        default -> System.out.println("Ongeldige keuze.");
+                    }
                 }
 
                 if (!klaar) {
