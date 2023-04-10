@@ -15,7 +15,7 @@ public class Menu {
 
             int keuze;
             try {
-                keuze = Vragen.vraagInt("");
+                keuze = scanner.nextInt();
                 scanner.nextLine();
             } catch (Exception e) {
                 System.out.println("Ongeldige invoer. Kies een nummer.");
