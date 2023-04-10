@@ -222,13 +222,17 @@ abstract class ObjectStorage {
 
         boolean extraOpties = Vragen.vraagJaNee("Wilt u opties toevoegen aan dit schip?");
 
-        // als er geen opties bij hoeven
         Schip nieuwSchip = new Schip(naam, beschrijving, motor);
 
-        // als er wel opties moeten worden toegevoegd, vraag ze dan en voeg ze toe aan het nieuwe schip
+        // als er opties moeten worden toegevoegd, vraag ze dan en voeg ze toe aan het nieuwe schip
         if (extraOpties) {
-            System.out.println("Voeg extra opties toe:");
-            nieuwSchip.addOptie();
+            boolean klaar = false;
+            while(!klaar) {
+                nieuwSchip.addOptie();
+                if (!Vragen.vraagJaNee("Wilt u nog een optie toevoegen?")){
+                    klaar = true;
+                }
+            }
             ArrayList<Optie> opties = Schip.opties;
             Schip.opties = new ArrayList<Optie>();
             schepen.add(new Schip(nieuwSchip.getNaam(), nieuwSchip.getBeschrijving(), nieuwSchip.getMotor(), opties));
