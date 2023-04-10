@@ -3,7 +3,7 @@ public class Menu {
     Scanner scanner = new Scanner(System.in);
     public void start() {
         boolean doorgaan = true;
-        System.out.println("Welkom bij de beheer applicatie.");
+        System.out.println("Welkom bij de beheerapplicatie.");
         while (doorgaan) {
             System.out.println("Kies een optie:");
             System.out.println("1. Klant beheren");
