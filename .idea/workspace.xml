@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="Onnodige loop weggehaald" />
+    <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="print methodes toegeveoegt">
+      <change beforePath="$PROJECT_DIR$/.idea/OfferteSysteem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OfferteSysteem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,27 +31,26 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2MmDwT6sle20H8pJ5605hjaRsqJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/marti/Documents/GitHub/OfferteSysteem",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marti/Documents/GitHub/OfferteSysteem&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -71,7 +74,6 @@
       <option name="presentableId" value="Default" />
       <updated>1678364105586</updated>
       <workItem from="1680726358151" duration="1122000" />
-      <workItem from="1681127635263" duration="38000" />
     </task>
     <task id="LOCAL-00001" summary="testfilemmdmdmdmd">
       <created>1678365338444</created>
@@ -150,14 +152,7 @@
       <option name="project" value="LOCAL" />
       <updated>1680783649100</updated>
     </task>
-    <task id="LOCAL-00012" summary="Onnodige loop weggehaald">
-      <created>1681126404567</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1681126404567</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,7 +180,6 @@
     <MESSAGE value="Eerdere mergefout gefixed" />
     <MESSAGE value="Totaalprijs berekenen in menu" />
     <MESSAGE value="print methodes toegeveoegt" />
-    <MESSAGE value="Onnodige loop weggehaald" />
-    <option name="LAST_COMMIT_MESSAGE" value="Onnodige loop weggehaald" />
+    <option name="LAST_COMMIT_MESSAGE" value="print methodes toegeveoegt" />
   </component>
 </project>
