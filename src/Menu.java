@@ -15,7 +15,7 @@ public class Menu {
 
             int keuze;
             try {
-                keuze = scanner.nextInt();
+                keuze = Vragen.vraagInt("");
                 scanner.nextLine();
             } catch (Exception e) {
                 System.out.println("Ongeldige invoer. Kies een nummer.");
@@ -33,8 +33,15 @@ public class Menu {
                     System.out.println("5. Klanten printen");
                     System.out.println("6. Terug naar hoofdmenu");
 
-                    int keuzeKlant = scanner.nextInt();
-                    scanner.nextLine();
+                    int keuzeKlant;
+                    try {
+                        keuzeKlant = Vragen.vraagInt("");
+                        scanner.nextLine();
+                    } catch (Exception e) {
+                        System.out.println("Ongeldige invoer. Kies een nummer.");
+                        scanner.nextLine();
+                        continue;
+                    }
 
                     switch (keuzeKlant) {
                         case 1 -> ObjectStorage.addKlant();
@@ -57,8 +64,15 @@ public class Menu {
                     System.out.println("5. Schepen printen");
                     System.out.println("6. Terug naar hoofdmenu");
 
-                    int keuzeSchip = scanner.nextInt();
-                    scanner.nextLine();
+                    int keuzeSchip;
+                    try {
+                        keuzeSchip = Vragen.vraagInt("");
+                        scanner.nextLine();
+                    } catch (Exception e) {
+                        System.out.println("Ongeldige invoer. Kies een nummer.");
+                        scanner.nextLine();
+                        continue;
+                    }
 
                     switch (keuzeSchip) {
                         case 1 -> ObjectStorage.addSchip();
@@ -82,8 +96,15 @@ public class Menu {
                     System.out.println("6. Terug naar hoofdmenu");
 
 
-                    int keuzePersoon = scanner.nextInt();
-                    scanner.nextLine();
+                    int keuzePersoon;
+                    try {
+                        keuzePersoon = scanner.nextInt();
+                        scanner.nextLine();
+                    } catch (Exception e) {
+                        System.out.println("Ongeldige invoer. Kies een nummer.");
+                        scanner.nextLine();
+                        continue;
+                    }
 
                     switch (keuzePersoon) {
                         case 1 -> ObjectStorage.addPersoon();
@@ -107,8 +128,15 @@ public class Menu {
                     System.out.println("6. Terug naar hoofdmenu");
 
 
-                    int keuzeKlanttype = scanner.nextInt();
-                    scanner.nextLine();
+                    int keuzeKlanttype;
+                    try {
+                        keuzeKlanttype = scanner.nextInt();
+                        scanner.nextLine();
+                    } catch (Exception e) {
+                        System.out.println("Ongeldige invoer. Kies een nummer.");
+                        scanner.nextLine();
+                        continue;
+                    }
 
                     switch (keuzeKlanttype) {
                         case 1 -> ObjectStorage.addKlanttype();
