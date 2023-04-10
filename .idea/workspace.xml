@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="Onnodige loop weggehaald">
+    <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="Opties in EditSchip verbeterd">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ObjectStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObjectStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Schip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Schip.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +158,21 @@
       <option name="project" value="LOCAL" />
       <updated>1681126404567</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Opties in AddSchip verbeterd">
+      <created>1681134315935</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1681134315935</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Opties in EditSchip verbeterd">
+      <created>1681134841282</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681134841282</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +201,8 @@
     <MESSAGE value="Totaalprijs berekenen in menu" />
     <MESSAGE value="print methodes toegeveoegt" />
     <MESSAGE value="Onnodige loop weggehaald" />
-    <option name="LAST_COMMIT_MESSAGE" value="Onnodige loop weggehaald" />
+    <MESSAGE value="Opties in AddSchip verbeterd" />
+    <MESSAGE value="Opties in EditSchip verbeterd" />
+    <option name="LAST_COMMIT_MESSAGE" value="Opties in EditSchip verbeterd" />
   </component>
 </project>

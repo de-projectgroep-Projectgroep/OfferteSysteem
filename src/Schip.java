@@ -242,7 +242,6 @@ public class Schip {
             }
         }
 
-        System.out.println("Opties voor " + schip.getNaam() + ":");
         if (!essentieleOpties.isEmpty()) {
             System.out.println("Essentiële opties:");
             for (Optie optie : essentieleOpties) {

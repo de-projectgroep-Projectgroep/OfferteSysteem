@@ -245,8 +245,6 @@ abstract class ObjectStorage {
         System.out.println("Naam: " + naam);
         System.out.println("Beschrijving: " + beschrijving);
         System.out.println("Motor: " + motor);
-        System.out.println("Opties:");
-
         Schip.printOpties(nieuwSchip);
     }
 
