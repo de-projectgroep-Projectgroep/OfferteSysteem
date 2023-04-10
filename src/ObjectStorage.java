@@ -181,7 +181,7 @@ abstract class ObjectStorage {
         } else {
             naam = Vragen.vraagString("Wat is de naam van de klant?");
             String email = Vragen.vraagString("Wat is de email van de klant?");
-            String telefoonnummer = Vragen.vraagString("Wat is de telefoonnummer van de klant?");
+            String telefoonnummer = Vragen.vraagString("Wat is het telefoonnummer van de klant?");
             klanten.add(new Klant(naam, email, telefoonnummer, klanttype));
         }
 
