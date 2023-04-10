@@ -35,7 +35,7 @@ public class Menu {
 
                     int keuzeKlant;
                     try {
-                        keuzeKlant = Vragen.vraagInt("");
+                        keuzeKlant = scanner.nextInt();
                         scanner.nextLine();
                     } catch (Exception e) {
                         System.out.println("Ongeldige invoer. Kies een nummer.");
@@ -66,7 +66,7 @@ public class Menu {
 
                     int keuzeSchip;
                     try {
-                        keuzeSchip = Vragen.vraagInt("");
+                        keuzeSchip = scanner.nextInt();
                         scanner.nextLine();
                     } catch (Exception e) {
                         System.out.println("Ongeldige invoer. Kies een nummer.");
