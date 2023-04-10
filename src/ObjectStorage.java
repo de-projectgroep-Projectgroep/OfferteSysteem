@@ -222,13 +222,17 @@ abstract class ObjectStorage {
 
         boolean extraOpties = Vragen.vraagJaNee("Wilt u opties toevoegen aan dit schip?");
 
-        // als er geen opties bij hoeven
         Schip nieuwSchip = new Schip(naam, beschrijving, motor);
 
-        // als er wel opties moeten worden toegevoegd, vraag ze dan en voeg ze toe aan het nieuwe schip
+        // als er opties moeten worden toegevoegd, vraag ze dan en voeg ze toe aan het nieuwe schip
         if (extraOpties) {
-            System.out.println("Voeg extra opties toe:");
-            nieuwSchip.addOptie();
+            boolean klaar = false;
+            while(!klaar) {
+                nieuwSchip.addOptie();
+                if (!Vragen.vraagJaNee("Wilt u nog een optie toevoegen?")){
+                    klaar = true;
+                }
+            }
             ArrayList<Optie> opties = Schip.opties;
             Schip.opties = new ArrayList<Optie>();
             schepen.add(new Schip(nieuwSchip.getNaam(), nieuwSchip.getBeschrijving(), nieuwSchip.getMotor(), opties));
@@ -241,8 +245,6 @@ abstract class ObjectStorage {
         System.out.println("Naam: " + naam);
         System.out.println("Beschrijving: " + beschrijving);
         System.out.println("Motor: " + motor);
-        System.out.println("Opties:");
-
         Schip.printOpties(nieuwSchip);
     }
 
@@ -726,7 +728,31 @@ abstract class ObjectStorage {
 
                 if (input.equalsIgnoreCase("optie") || input.equalsIgnoreCase("opties")) {
                     klaar = true;
+                    boolean klaar2 = false;
+                    System.out.println("Kies een optie:");
+                    System.out.println("1. Optie toevoegen");
+                    System.out.println("2. Optie aanpassen");
+                    System.out.println("3. Optie verwijderen");
+                    System.out.println("4. Klaar");
                     Schip.editOptie();
+
+                    int keuze = Vragen.vraagInt("");
+
+                    switch (keuze) {
+                        case 1 -> {
+                            schip.addOptie();
+                        }
+                        case 2 -> {
+                            schip.editOptie();
+                        }
+                        case 3 -> {
+                            schip.removeOptie();
+                        }
+                        case 4 -> {
+                            break;
+                        }
+                        default -> System.out.println("Ongeldige keuze.");
+                    }
                 }
 
                 if (!klaar) {

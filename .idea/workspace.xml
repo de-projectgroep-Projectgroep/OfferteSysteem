@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="errors in Menu opgelost">
+    <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="print methodes toegeveoegt">
+      <change beforePath="$PROJECT_DIR$/.idea/OfferteSysteem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/OfferteSysteem.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
     </list>
@@ -151,14 +152,7 @@
       <option name="project" value="LOCAL" />
       <updated>1680783649100</updated>
     </task>
-    <task id="LOCAL-00012" summary="errors in Menu opgelost">
-      <created>1681132077940</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1681132077940</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,7 +180,6 @@
     <MESSAGE value="Eerdere mergefout gefixed" />
     <MESSAGE value="Totaalprijs berekenen in menu" />
     <MESSAGE value="print methodes toegeveoegt" />
-    <MESSAGE value="errors in Menu opgelost" />
-    <option name="LAST_COMMIT_MESSAGE" value="errors in Menu opgelost" />
+    <option name="LAST_COMMIT_MESSAGE" value="print methodes toegeveoegt" />
   </component>
 </project>
