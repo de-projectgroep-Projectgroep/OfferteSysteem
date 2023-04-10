@@ -220,15 +220,31 @@ abstract class ObjectStorage {
         String beschrijving = Vragen.vraagString("Wat moet de beschrijving van het schip worden?");
         String motor = Vragen.vraagString("Wat moet de naam van de motor van het schip worden?");
 
+        boolean extraOpties = Vragen.vraagJaNee("Wilt u opties toevoegen aan dit schip?");
+
+        // als er geen opties bij hoeven
+        Schip nieuwSchip = new Schip(naam, beschrijving, motor);
+
+        // als er wel opties moeten worden toegevoegd, vraag ze dan en voeg ze toe aan het nieuwe schip
+        if (extraOpties) {
+            System.out.println("Voeg extra opties toe:");
+            nieuwSchip.addOptie();
+            ArrayList<Optie> opties = Schip.opties;
+            Schip.opties = new ArrayList<Optie>();
+            schepen.add(new Schip(nieuwSchip.getNaam(), nieuwSchip.getBeschrijving(), nieuwSchip.getMotor(), opties));
+        } else {
+            schepen.add(nieuwSchip);
+        }
+
         System.out.println("");
         System.out.println("Er is een nieuw schip aangemaakt met de volgende gegevens:");
         System.out.println("Naam: " + naam);
         System.out.println("Beschrijving: " + beschrijving);
         System.out.println("Motor: " + motor);
+        System.out.println("Opties:");
 
-        schepen.add(new Schip(naam, beschrijving, motor));
+        Schip.printOpties(nieuwSchip);
     }
-
 
     public static Klanttype getKlanttype() {
         Klanttype klanttype = null;
@@ -708,6 +724,11 @@ abstract class ObjectStorage {
                     }
                 }
 
+                if (input.equalsIgnoreCase("optie") || input.equalsIgnoreCase("opties")) {
+                    klaar = true;
+                    Schip.editOptie();
+                }
+
                 if (!klaar) {
                     System.out.println("Dit is geen gegeven dat u kan wijzigen.");
                     System.out.println("U kan de gegevens naam, beschrijving, en motor wijzigen.");
@@ -737,7 +758,14 @@ abstract class ObjectStorage {
     public static void printSchepen() {
         System.out.println("Schepen:");
         for (Schip schip : schepen) {
-            System.out.println(schip.getNaam() + " - " + schip.getBeschrijving() + " - " + schip.getMotor());
+            System.out.print(schip.getNaam() + " - " + schip.getBeschrijving() + " - " + schip.getMotor());
+            ArrayList<Optie> opties = schip.getOpties();
+            if (opties != null && !opties.isEmpty()) {
+                System.out.println();
+                Schip.printOpties(schip);
+            } else {
+                System.out.println(" - Geen opties beschikbaar");
+            }
         }
     }
 }
