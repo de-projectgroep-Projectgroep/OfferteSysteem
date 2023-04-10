@@ -3,13 +3,8 @@ import java.util.ArrayList;
 public class Totaalprijs {
     public static double berekenTotaalPrijs(Klant klant, Schip schip) { //importeren uit de andere classes
 
-        ArrayList<Optie> opties = new ArrayList<Optie>();
-        for (Optie optie : schip.opties){
-            opties.add(optie);
-        }
-
         double totaal = 0;
-        for (Optie optie : opties) {
+        for (Optie optie : schip.opties) {
             totaal += (optie.getKosten() * (1 - (optie.getMilieuKortingsPercentage() / 100.0)));
         }
 
