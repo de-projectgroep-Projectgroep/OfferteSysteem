@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Schip {
-    public ArrayList<Optie> opties = new ArrayList<Optie>();
+    public static ArrayList<Optie> opties = new ArrayList<Optie>();
     private static ArrayList<Schip> schepen = new ArrayList<Schip>();
     private String naam;
     private String beschrijving;
@@ -12,6 +12,13 @@ public class Schip {
         this.naam = naam;
         this.beschrijving = beschrijving;
         this.motor = motor;
+    }
+
+    public Schip(String naam, String beschrijving, String motor, ArrayList<Optie> opties) {
+        this.naam = naam;
+        this.beschrijving = beschrijving;
+        this.motor = motor;
+        this.opties = opties;
     }
 
     public String getNaam() {
@@ -38,6 +45,9 @@ public class Schip {
         this.motor = motor;
     }
 
+    public ArrayList<Optie> getOpties() {
+        return opties;
+    }
     public void addOptie() {
         boolean uniekNaam = false;
         String naam = null;
@@ -93,7 +103,7 @@ public class Schip {
         opties.add(new Optie(naam, beschrijving, kosten, essentieel, milieuVriendelijk, milieuKortingspercentage));
     }
 
-    public Optie getOptie() {
+    public static Optie getOptie() {
         Optie optie = null;
         boolean match = false;
 
@@ -129,7 +139,7 @@ public class Schip {
         }
     }
 
-    public void editOptie() {
+    public static void editOptie() {
         Optie optie = getOptie();
 
         if (optie == null) {
@@ -220,11 +230,11 @@ public class Schip {
         }
     }
 
-    public void printOpties() {
+    public static void printOpties(Schip schip) {
         List<Optie> essentieleOpties = new ArrayList<>();
         List<Optie> extraOpties = new ArrayList<>();
 
-        for (Optie optie : opties) {
+        for (Optie optie : schip.getOpties()) {
             if (optie.getEssentieel()) {
                 essentieleOpties.add(optie);
             } else {
@@ -232,14 +242,23 @@ public class Schip {
             }
         }
 
-        System.out.println("Essentiële opties:");
-        for (Optie optie : essentieleOpties) {
-            System.out.println(optie.getNaam() + " - " + optie.getBeschrijving() + " - €" + optie.getKosten());
+        System.out.println("Opties voor " + schip.getNaam() + ":");
+        if (!essentieleOpties.isEmpty()) {
+            System.out.println("Essentiële opties:");
+            for (Optie optie : essentieleOpties) {
+                System.out.println(optie.getNaam() + " - " + optie.getBeschrijving() + " - €" + optie.getKosten());
+            }
         }
 
-        System.out.println("Extra opties:");
-        for (Optie optie : extraOpties) {
-            System.out.println(optie.getNaam() + " - " + optie.getBeschrijving() + " - €" + optie.getKosten());
+        if (!extraOpties.isEmpty()) {
+            System.out.println("Extra opties:");
+            for (Optie optie : extraOpties) {
+                System.out.println(optie.getNaam() + " - " + optie.getBeschrijving() + " - €" + optie.getKosten());
+            }
+        }
+
+        if (essentieleOpties.isEmpty() && extraOpties.isEmpty()) {
+            System.out.println("Geen opties beschikbaar voor " + schip.getNaam());
         }
     }
 }
