@@ -6,10 +6,10 @@ public class Menu {
         System.out.println("Welkom bij de beheerapplicatie.");
         while (doorgaan) {
             System.out.println("Kies een optie:");
-            System.out.println("1. Klant beheren");
-            System.out.println("2. Schip beheren");
-            System.out.println("3. Persoon beheren");
-            System.out.println("4. Klanttype beheren");
+            System.out.println("1. Klanten beheren");
+            System.out.println("2. Schepen beheren");
+            System.out.println("3. Personen beheren");
+            System.out.println("4. Klanttypes beheren");
             System.out.println("5. Totaalprijs berekenen");
             System.out.println("6. Afsluiten");
 
@@ -44,12 +44,28 @@ public class Menu {
                     }
 
                     switch (keuzeKlant) {
-                        case 1 -> ObjectStorage.addKlant();
-                        case 2 -> ObjectStorage.editKlant();
-                        case 3 -> ObjectStorage.removeKlant();
-                        case 4 -> ObjectStorage.getKlant();
-                        case 5 -> ObjectStorage.printKlanten();
+                        case 1 -> {
+                            ObjectStorage.addKlant();
+                            System.out.println("");
+                        }
+                        case 2 -> {
+                            ObjectStorage.editKlant();
+                            System.out.println("");
+                        }
+                        case 3 -> {
+                            ObjectStorage.removeKlant();
+                            System.out.println("");
+                        }
+                        case 4 -> {
+                            ObjectStorage.getKlant();
+                            System.out.println("");
+                        }
+                        case 5 -> {
+                            ObjectStorage.printKlanten();
+                            System.out.println("");
+                        }
                         case 6 -> {
+                            System.out.println("");
                             break;
                         }
                         default -> System.out.println("Ongeldige keuze");
@@ -75,12 +91,27 @@ public class Menu {
                     }
 
                     switch (keuzeSchip) {
-                        case 1 -> ObjectStorage.addSchip();
-                        case 2 -> ObjectStorage.editSchip();
-                        case 3 -> ObjectStorage.removeSchip();
-                        case 4 -> ObjectStorage.getSchip();
-                        case 5 -> ObjectStorage.printSchepen();
+                        case 1 -> {
+                            ObjectStorage.addSchip();
+                            System.out.println("");}
+                        case 2 -> {
+                            ObjectStorage.editSchip();
+                            System.out.println("");
+                        }
+                        case 3 -> {
+                            ObjectStorage.removeSchip();
+                            System.out.println("");
+                        }
+                        case 4 -> {
+                            ObjectStorage.getSchip();
+                            System.out.println("");
+                        }
+                        case 5 -> {
+                            ObjectStorage.printSchepen();
+                            System.out.println("");
+                        }
                         case 6 -> {
+                            System.out.println("");
                             break;
                         }
                         default -> System.out.println("Ongeldige keuze");
@@ -107,11 +138,27 @@ public class Menu {
                     }
 
                     switch (keuzePersoon) {
-                        case 1 -> ObjectStorage.addPersoon();
-                        case 2 -> ObjectStorage.editPersoon();
-                        case 3 -> ObjectStorage.removePersoon();
-                        case 4 -> ObjectStorage.getPersoon();
-                        case 5 -> ObjectStorage.printPersonen();
+                        case 1 -> {
+                            ObjectStorage.addPersoon();
+                            System.out.println("");
+                        }
+                        case 2 -> {
+                            ObjectStorage.editPersoon();
+                            System.out.println("");
+                        }
+                        case 3 -> {
+                            ObjectStorage.removePersoon();
+                            System.out.println("");
+                        }
+                        case 4 -> {
+                            ObjectStorage.getPersoon();
+                            System.out.println("");
+                        }
+
+                        case 5 -> {
+                            ObjectStorage.printPersonen();
+                            System.out.println("");
+                        }
                         case 6 -> {
                             break;
                         }
@@ -139,11 +186,26 @@ public class Menu {
                     }
 
                     switch (keuzeKlanttype) {
-                        case 1 -> ObjectStorage.addKlanttype();
-                        case 2 -> ObjectStorage.editKlanttype();
-                        case 3 -> ObjectStorage.removeKlanttype();
-                        case 4 -> ObjectStorage.getKlanttype();
-                        case 5 -> ObjectStorage.printKlanttypes();
+                        case 1 -> {
+                            ObjectStorage.addKlanttype();
+                            System.out.println("");
+                        }
+                        case 2 -> {
+                            ObjectStorage.editKlanttype();
+                            System.out.println("");
+                        }
+                        case 3 -> {
+                            ObjectStorage.removeKlanttype();
+                            System.out.println("");
+                        }
+                        case 4 -> {
+                            ObjectStorage.getKlanttype();
+                            System.out.println("");
+                        }
+                        case 5 -> {
+                            ObjectStorage.printKlanttypes();
+                            System.out.println("");
+                        }
                         case 6 -> {
                             break;
                         }
@@ -152,15 +214,7 @@ public class Menu {
                 }
 
                 case 5 -> {
-                    Klant klant = ObjectStorage.getKlant();
-                    Schip schip = ObjectStorage.getSchip();
-
-                    if (klant != null && schip != null) {
-                        System.out.println("De totaalprijs is: " + Totaalprijs.berekenTotaalPrijs(klant, schip));
-                    }
-                    else {
-                        System.out.println("Klant of schip niet gevonden.");
-                    }
+                    Totaalprijs.berekenTotaalPrijs();
                 }
 
                 case 6 -> {

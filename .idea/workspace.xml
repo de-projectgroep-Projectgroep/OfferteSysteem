@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="errors in Menu opgelost" />
+    <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="Opties in EditSchip verbeterd">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ObjectStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObjectStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Schip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Schip.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Totaalprijs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Totaalprijs.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,19 +40,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/marti/Documents/GitHub/OfferteSysteem&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/marti/Documents/GitHub/OfferteSysteem",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -70,6 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1678364105586</updated>
       <workItem from="1680726358151" duration="1122000" />
+      <workItem from="1681236373667" duration="2855000" />
     </task>
     <task id="LOCAL-00001" summary="testfilemmdmdmdmd">
       <created>1678365338444</created>
@@ -148,21 +155,28 @@
       <option name="project" value="LOCAL" />
       <updated>1680783649100</updated>
     </task>
-    <task id="LOCAL-00012" summary="errors in Menu opgelost">
-      <created>1681136397239</created>
+    <task id="LOCAL-00012" summary="Onnodige loop weggehaald">
+      <created>1681126404567</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1681136397239</updated>
+      <updated>1681126404567</updated>
     </task>
-    <task id="LOCAL-00013" summary="errors in Menu opgelost">
-      <created>1681136513002</created>
+    <task id="LOCAL-00013" summary="Opties in AddSchip verbeterd">
+      <created>1681134315935</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1681136513002</updated>
+      <updated>1681134315935</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Opties in EditSchip verbeterd">
+      <created>1681134841282</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681134841282</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +204,9 @@
     <MESSAGE value="Eerdere mergefout gefixed" />
     <MESSAGE value="Totaalprijs berekenen in menu" />
     <MESSAGE value="print methodes toegeveoegt" />
-    <MESSAGE value="errors in Menu opgelost" />
-    <option name="LAST_COMMIT_MESSAGE" value="errors in Menu opgelost" />
+    <MESSAGE value="Onnodige loop weggehaald" />
+    <MESSAGE value="Opties in AddSchip verbeterd" />
+    <MESSAGE value="Opties in EditSchip verbeterd" />
+    <option name="LAST_COMMIT_MESSAGE" value="Opties in EditSchip verbeterd" />
   </component>
 </project>

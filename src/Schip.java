@@ -5,19 +5,13 @@ public class Schip {
     public static ArrayList<Optie> opties = new ArrayList<Optie>();
     private static ArrayList<Schip> schepen = new ArrayList<Schip>();
     private String naam;
+    private String type;
     private String beschrijving;
-    private String motor;
 
-    public Schip(String naam, String beschrijving, String motor) {
+    public Schip(String naam, String type, String beschrijving, ArrayList<Optie> opties) {
         this.naam = naam;
+        this.type = type;
         this.beschrijving = beschrijving;
-        this.motor = motor;
-    }
-
-    public Schip(String naam, String beschrijving, String motor, ArrayList<Optie> opties) {
-        this.naam = naam;
-        this.beschrijving = beschrijving;
-        this.motor = motor;
         this.opties = opties;
     }
 
@@ -25,24 +19,24 @@ public class Schip {
         return naam;
     }
 
-    public String getBeschrijving() {
-        return beschrijving;
+    public String getType() {
+        return type;
     }
 
-    public String getMotor() {
-        return motor;
+    public String getBeschrijving() {
+        return beschrijving;
     }
 
     public void setNaam(String naam) {
         this.naam = naam;
     }
 
-    public void setBeschrijving(String beschrijving) {
-        this.beschrijving = beschrijving;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public void setMotor(String motor) {
-        this.motor = motor;
+    public void setBeschrijving(String beschrijving) {
+        this.beschrijving = beschrijving;
     }
 
     public ArrayList<Optie> getOpties() {
@@ -110,7 +104,7 @@ public class Schip {
         while (!match) {
             String input = Vragen.vraagString("Wat is de naam van de optie?");
             for (Optie x : opties) {
-                if ((x.getNaam()).equals(input)) {
+                if ((x.getNaam()).equalsIgnoreCase(input)) {
                     optie = x;
                     match = true;
                     break;

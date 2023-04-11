@@ -10,18 +10,14 @@ abstract class ObjectStorage {
     public static void addKlanttype() {
         boolean uniekType = false;
         String type = null;
-        int uniekCheck;
         while (!uniekType) {
+            uniekType = true;
             type = Vragen.vraagString("Over wat voor klanttype gaat het?");
-            uniekCheck = 0;
             for (Klanttype klanttype : klanttypes) {
-                if (klanttype.getType().equals(type)) {
+                if (klanttype.getType().equalsIgnoreCase(type)) {
                     System.out.println("Dit klanttype staat al in ons systeem.");
-                    uniekCheck++;
+                    uniekType = false;
                 }
-            }
-            if (uniekCheck == 0) {
-                uniekType = true;
             }
         }
         int kortingsPercentage = Vragen.vraagInt("Hoeveel procent korting moet dit klanttype krijgen?");
@@ -42,20 +38,16 @@ abstract class ObjectStorage {
         String geboortedatum = Vragen.vraagString("Wat is de geboortedatum van de persoon?");
 
         boolean uniekType = false;
-        int uniekCheck;
         String email = null;
 
         while (!uniekType) {
+            uniekType = true;
             email = Vragen.vraagString("Wat is het emailadres van de persoon?");
-            uniekCheck = 0;
             for (Persoon persoon : personen) {
-                if (persoon.getEmail().equals(email)) {
+                if (persoon.getEmail().equalsIgnoreCase(email)) {
                     System.out.println("Dit emailadres is al in gebruik.");
-                    uniekCheck++;
+                    uniekType = false;
                 }
-            }
-            if (uniekCheck == 0) {
-                uniekType = true;
             }
         }
 
@@ -64,15 +56,12 @@ abstract class ObjectStorage {
 
         while (!uniekType) {
             telefoonnummer = Vragen.vraagString("Wat is het telefoonnummer van de persoon?");
-            uniekCheck = 0;
+            uniekType = true;
             for (Persoon persoon : personen) {
-                if (persoon.getTelefoonnummer().equals(telefoonnummer)) {
+                if (persoon.getTelefoonnummer().equalsIgnoreCase(telefoonnummer)) {
                     System.out.println("Er staat al een persoon in ons systeem met dit telefoonnummer.");
-                    uniekCheck++;
+                    uniekType = false;
                 }
-            }
-            if (uniekCheck == 0) {
-                uniekType = true;
             }
         }
 
@@ -132,7 +121,7 @@ abstract class ObjectStorage {
 
         if (persoon != null) {
             for (int i = 0; i < klanten.size(); i++) {
-                if ((klanten.get(i).getNaam().equals(persoonnaam))) {
+                if ((klanten.get(i).getNaam().equalsIgnoreCase(persoonnaam))) {
                     uniekNaam = false;
                 }
             }
@@ -150,22 +139,18 @@ abstract class ObjectStorage {
         }
 
         boolean uniekType;
-        int uniekCheck;
 
         if (naam != null) {
             uniekType = false;
 
             while (!uniekType) {
                 naam = Vragen.vraagString("Wat is de naam van de klant?");
-                uniekCheck = 0;
+                uniekType = true;
                 for (Klant klant : klanten) {
-                    if (klant.getNaam().equals(naam)) {
+                    if (klant.getNaam().equalsIgnoreCase(naam)) {
                         System.out.println("Er staat al een klant in ons systeem met deze naam.");
-                        uniekCheck++;
+                        uniekType = false;
                     }
-                }
-                if (uniekCheck == 0) {
-                    uniekType = true;
                 }
             }
         }
@@ -206,7 +191,7 @@ abstract class ObjectStorage {
             naam = Vragen.vraagString("Wat moet de naam van het schip worden?");
             boolean isUniek = true;
             for (Schip schip : schepen) {
-                if (schip.getNaam().equals(naam)) {
+                if (schip.getNaam().equalsIgnoreCase(naam)) {
                     System.out.println("Er staat al een schip met deze naam in ons systeem.");
                     isUniek = false;
                     break;
@@ -217,12 +202,13 @@ abstract class ObjectStorage {
             }
         }
 
+        String type = Vragen.vraagString("Over wat voor type schip gaat het?");
+
         String beschrijving = Vragen.vraagString("Wat moet de beschrijving van het schip worden?");
-        String motor = Vragen.vraagString("Wat moet de naam van de motor van het schip worden?");
 
         boolean extraOpties = Vragen.vraagJaNee("Wilt u opties toevoegen aan dit schip?");
 
-        Schip nieuwSchip = new Schip(naam, beschrijving, motor);
+        Schip nieuwSchip = new Schip(naam, type, beschrijving, new ArrayList<Optie>());
 
         // als er opties moeten worden toegevoegd, vraag ze dan en voeg ze toe aan het nieuwe schip
         if (extraOpties) {
@@ -235,7 +221,7 @@ abstract class ObjectStorage {
             }
             ArrayList<Optie> opties = Schip.opties;
             Schip.opties = new ArrayList<Optie>();
-            schepen.add(new Schip(nieuwSchip.getNaam(), nieuwSchip.getBeschrijving(), nieuwSchip.getMotor(), opties));
+            schepen.add(new Schip(nieuwSchip.getNaam(), nieuwSchip.getType(), nieuwSchip.getBeschrijving(), opties));
         } else {
             schepen.add(nieuwSchip);
         }
@@ -244,7 +230,6 @@ abstract class ObjectStorage {
         System.out.println("Er is een nieuw schip aangemaakt met de volgende gegevens:");
         System.out.println("Naam: " + naam);
         System.out.println("Beschrijving: " + beschrijving);
-        System.out.println("Motor: " + motor);
         Schip.printOpties(nieuwSchip);
     }
 
@@ -254,7 +239,7 @@ abstract class ObjectStorage {
         while (!match) {
             String input = Vragen.vraagString("Over welk klanttype gaat het?");
             for (Klanttype x : klanttypes) {
-                if ((x.getType().equals(input))) {
+                if ((x.getType().equalsIgnoreCase(input))) {
                     klanttype = x;
                     match = true;
                 }
@@ -278,7 +263,7 @@ abstract class ObjectStorage {
         while (!match) {
             String input = Vragen.vraagString("Wat is de email van de persoon?");
             for (Persoon x : personen) {
-                if ((x.getEmail().equals(input))) {
+                if ((x.getEmail().equalsIgnoreCase(input))) {
                     persoon = x;
                 }
             }
@@ -303,7 +288,7 @@ abstract class ObjectStorage {
         while (!match) {
             String input = Vragen.vraagString("Wat is de naam van de klant?");
             for (Klant value : klanten) {
-                if ((value.getNaam()).equals(input)) {
+                if ((value.getNaam()).equalsIgnoreCase(input)) {
                     klant = value;
                     match = true;
                     break;
@@ -326,7 +311,7 @@ abstract class ObjectStorage {
         while (true) {
             String input = Vragen.vraagString("Wat is de naam van het schip?");
             for (Schip s : schepen) {
-                if ((s.getNaam()).equals(input)) {
+                if ((s.getNaam()).equalsIgnoreCase(input)) {
                     schip = s;
                     break;
                 }
@@ -402,18 +387,14 @@ abstract class ObjectStorage {
                 String nieuweWaarde = "";
 
                 boolean uniekType = false;
-                int uniekCheck;
                 while (!uniekType) {
+                    uniekType = true;
                     nieuweWaarde = Vragen.vraagString("Wat moet het nieuwe klanttype worden?");
-                    uniekCheck = 0;
                     for (Klanttype x : klanttypes) {
-                        if (x.getType().equals(nieuweWaarde)) {
+                        if (x.getType().equalsIgnoreCase(nieuweWaarde)) {
                             System.out.println("Dit klanttype staat al in ons systeem.");
-                            uniekCheck++;
+                            uniekType = false;
                         }
-                    }
-                    if (uniekCheck == 0) {
-                        uniekType = true;
                     }
                 }
 
@@ -458,20 +439,16 @@ abstract class ObjectStorage {
                 if (input.equalsIgnoreCase("email")) {
                     klaar = true;
                     boolean uniekType = false;
-                    int uniekCheck;
                     String nieuweWaarde = null;
 
                     while (!uniekType) {
                         nieuweWaarde = Vragen.vraagString("Wat is de nieuwe email van de persoon?");
-                        uniekCheck = 0;
+                        uniekType = true;
                         for (Persoon x : personen) {
-                            if (persoon.getEmail().equals(nieuweWaarde)) {
+                            if (persoon.getEmail().equalsIgnoreCase(nieuweWaarde)) {
                                 System.out.println("Er staat al een persoon in ons systeem met dit emailadres.");
-                                uniekCheck++;
+                                uniekType = false;
                             }
-                        }
-                        if (uniekCheck == 0) {
-                            uniekType = true;
                         }
                     }
 
@@ -485,20 +462,16 @@ abstract class ObjectStorage {
                 if (input.equalsIgnoreCase("telefoonnummer")) {
                     klaar = true;
                     boolean uniekType = false;
-                    int uniekCheck;
                     String nieuweWaarde = null;
 
                     while (!uniekType) {
                         nieuweWaarde = Vragen.vraagString("Wat is het nieuwe telefoonnummer van de persoon?");
-                        uniekCheck = 0;
+                        uniekType = true;
                         for (Persoon x : personen) {
-                            if (persoon.getTelefoonnummer().equals(nieuweWaarde)) {
+                            if (persoon.getTelefoonnummer().equalsIgnoreCase(nieuweWaarde)) {
                                 System.out.println("Er staat al een persoon in ons systeem met dit telefoonnummer.");
-                                uniekCheck++;
+                                uniekType = false;
                             }
-                        }
-                        if (uniekCheck == 0) {
-                            uniekType = true;
                         }
                     }
 
@@ -576,20 +549,16 @@ abstract class ObjectStorage {
                 if (input.equalsIgnoreCase("naam")) {
                     klaar = true;
                     boolean uniekType = false;
-                    int uniekCheck;
                     String nieuweWaarde = null;
 
                     while (!uniekType) {
                         nieuweWaarde = Vragen.vraagString("Wat is de nieuwe naam van de klant?");
-                        uniekCheck = 0;
+                        uniekType = true;
                         for (Klant x : klanten) {
-                            if (klant.getNaam().equals(nieuweWaarde)) {
+                            if (klant.getNaam().equalsIgnoreCase(nieuweWaarde)) {
                                 System.out.println("Er staat al een klant in ons systeem met deze naam.");
-                                uniekCheck++;
+                                uniekType = false;
                             }
-                        }
-                        if (uniekCheck == 0) {
-                            uniekType = true;
                         }
                     }
 
@@ -680,20 +649,16 @@ abstract class ObjectStorage {
                 if (input.equalsIgnoreCase("naam")) {
                     klaar = true;
                     boolean uniekType = false;
-                    int uniekCheck;
                     String nieuweWaarde = null;
 
                     while (!uniekType) {
                         nieuweWaarde = Vragen.vraagString("Wat is de nieuwe naam van het schip?");
-                        uniekCheck = 0;
+                        uniekType = true;
                         for (Schip x : schepen) {
-                            if (schip.getNaam().equals(nieuweWaarde)) {
+                            if (schip.getNaam().equalsIgnoreCase(nieuweWaarde)) {
                                 System.out.println("Er staat al een schip in ons systeem met deze naam.");
-                                uniekCheck++;
+                                uniekType = false;
                             }
-                        }
-                        if (uniekCheck == 0) {
-                            uniekType = true;
                         }
                     }
 
@@ -701,6 +666,17 @@ abstract class ObjectStorage {
                         schip.setNaam(nieuweWaarde);
                     } else {
                         System.out.println("De naam is niet gewijzigd.");
+                    }
+                }
+
+                if (input.equalsIgnoreCase("type")) {
+                    klaar = true;
+                    String nieuweWaarde = Vragen.vraagString("Wat moet het nieuwe type schip worden?");
+
+                    if (Vragen.vraagJaNee("Weet u zeker dat u het type schip wilt wijzigen?")) {
+                        schip.setBeschrijving(nieuweWaarde);
+                    } else {
+                        System.out.println("Het type schip is niet gewijzigd.");
                     }
                 }
 
@@ -712,17 +688,6 @@ abstract class ObjectStorage {
                         schip.setBeschrijving(nieuweWaarde);
                     } else {
                         System.out.println("De beschrijving is niet gewijzigd.");
-                    }
-                }
-
-                if (input.equalsIgnoreCase("motor")) {
-                    klaar = true;
-                    String nieuweWaarde = Vragen.vraagString("Wat moet de nieuwe motor worden?");
-
-                    if (Vragen.vraagJaNee("Weet u zeker dat u de motor wilt wijzigen?")) {
-                        schip.setMotor(nieuweWaarde);
-                    } else {
-                        System.out.println("De motor is niet gewijzigd.");
                     }
                 }
 
@@ -757,7 +722,7 @@ abstract class ObjectStorage {
 
                 if (!klaar) {
                     System.out.println("Dit is geen gegeven dat u kan wijzigen.");
-                    System.out.println("U kan de gegevens naam, beschrijving, en motor wijzigen.");
+                    System.out.println("U kan de gegevens naam en beschrijving wijzigen.");
                     if (!Vragen.vraagJaNee("Wilt u een van deze gegevens wijzigen?")) {
                         klaar = true;
                     }
@@ -784,7 +749,8 @@ abstract class ObjectStorage {
     public static void printSchepen() {
         System.out.println("Schepen:");
         for (Schip schip : schepen) {
-            System.out.print(schip.getNaam() + " - " + schip.getBeschrijving() + " - " + schip.getMotor());
+            System.out.println("");
+            System.out.print(schip.getNaam() + " - " + schip.getType() + " - " + schip.getBeschrijving());
             ArrayList<Optie> opties = schip.getOpties();
             if (opties != null && !opties.isEmpty()) {
                 System.out.println();
