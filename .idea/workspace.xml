@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="Totaalprijs een structuur gegeven en meer gegevens laten printen. En daarnaast veel finetuning gedaan op andere code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ObjectStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObjectStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Totaalprijs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Totaalprijs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vragen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vragen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
