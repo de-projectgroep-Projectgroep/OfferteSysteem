@@ -4,7 +4,7 @@ Offerte systeem voor in de scheepsbouw
 # Hoe krijg ik dit draaiend?
 ## Stap 1: Download het nieuwste .jar bestand
 
-Check de releases en download het nieuwste .jar bestand.
+Check de [releases](https://github.com/de-projectgroep-Projectgroep/OfferteSysteem/releases) en download het nieuwste .jar bestand.
 
 ## Stap 2: Download en installeer Java 17
 
