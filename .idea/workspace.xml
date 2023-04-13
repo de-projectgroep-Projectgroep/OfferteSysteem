@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="Totaalprijs een structuur gegeven en meer gegevens laten printen. En daarnaast veel finetuning gedaan op andere code">
+    <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="Abstract class dingen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ObjectStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObjectStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Totaalprijs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Totaalprijs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vragen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vragen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +74,7 @@
       <workItem from="1680726358151" duration="1122000" />
       <workItem from="1681236373667" duration="3171000" />
       <workItem from="1681280841249" duration="29000" />
-      <workItem from="1681382627277" duration="420000" />
+      <workItem from="1681382627277" duration="5126000" />
     </task>
     <task id="LOCAL-00001" summary="testfilemmdmdmdmd">
       <created>1678365338444</created>
@@ -184,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681239326050</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Abstract class dingen">
+      <created>1681383061244</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1681383061244</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -216,6 +220,7 @@
     <MESSAGE value="Opties in AddSchip verbeterd" />
     <MESSAGE value="Opties in EditSchip verbeterd" />
     <MESSAGE value="Totaalprijs een structuur gegeven en meer gegevens laten printen. En daarnaast veel finetuning gedaan op andere code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Totaalprijs een structuur gegeven en meer gegevens laten printen. En daarnaast veel finetuning gedaan op andere code" />
+    <MESSAGE value="Abstract class dingen" />
+    <option name="LAST_COMMIT_MESSAGE" value="Abstract class dingen" />
   </component>
 </project>

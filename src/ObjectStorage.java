@@ -332,12 +332,17 @@ public abstract class ObjectStorage {
 
     public static void removeKlanttype() {
         Klanttype klanttype = getKlanttype();
-        if (klanttype != null) {
-            if (Vragen.vraagJaNee("Weet u zeker dat u dit klanttype wilt verwijderen?")) {
-                klanttypes.remove(klanttype);
-            } else {
-                System.out.println("Het klanttype is niet verwijderd.");
+        if (klanttypes.size() > 1) {
+            if (klanttype != null) {
+                if (Vragen.vraagJaNee("Weet u zeker dat u dit klanttype wilt verwijderen?")) {
+                    klanttypes.remove(klanttype);
+                } else {
+                    System.out.println("Het klanttype is niet verwijderd.");
+                }
             }
+        }
+        else{
+            System.out.println("Er is maar één klanttype, voeg een nieuw klanttype toe voordat je deze verwijderd.");
         }
     }
 
