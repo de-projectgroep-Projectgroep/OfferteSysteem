@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Totaalprijs {
+public abstract class Totaalprijs {
     public static double berekenTotaalPrijs() { //importeren uit de andere classes
         double totaal = 0;
         Klanttype klanttype = null;

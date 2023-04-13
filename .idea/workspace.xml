@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="Opties in EditSchip verbeterd">
+    <list default="true" id="cf688107-62a4-4bf6-918c-b42a618b92a2" name="Changes" comment="Totaalprijs een structuur gegeven en meer gegevens laten printen. En daarnaast veel finetuning gedaan op andere code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ObjectStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ObjectStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Schip.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Schip.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Totaalprijs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Totaalprijs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vragen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vragen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,19 +39,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/marti/Documents/GitHub/OfferteSysteem",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/marti/Documents/GitHub/OfferteSysteem&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
@@ -76,7 +75,9 @@
       <option name="presentableId" value="Default" />
       <updated>1678364105586</updated>
       <workItem from="1680726358151" duration="1122000" />
-      <workItem from="1681236373667" duration="2855000" />
+      <workItem from="1681236373667" duration="3171000" />
+      <workItem from="1681280841249" duration="29000" />
+      <workItem from="1681382627277" duration="420000" />
     </task>
     <task id="LOCAL-00001" summary="testfilemmdmdmdmd">
       <created>1678365338444</created>
@@ -176,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681134841282</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Totaalprijs een structuur gegeven en meer gegevens laten printen. En daarnaast veel finetuning gedaan op andere code">
+      <created>1681239326050</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1681239326050</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +215,7 @@
     <MESSAGE value="Onnodige loop weggehaald" />
     <MESSAGE value="Opties in AddSchip verbeterd" />
     <MESSAGE value="Opties in EditSchip verbeterd" />
-    <option name="LAST_COMMIT_MESSAGE" value="Opties in EditSchip verbeterd" />
+    <MESSAGE value="Totaalprijs een structuur gegeven en meer gegevens laten printen. En daarnaast veel finetuning gedaan op andere code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Totaalprijs een structuur gegeven en meer gegevens laten printen. En daarnaast veel finetuning gedaan op andere code" />
   </component>
 </project>

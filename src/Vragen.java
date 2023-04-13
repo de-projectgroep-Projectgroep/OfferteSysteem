@@ -1,5 +1,5 @@
 import java.util.Scanner;
-abstract class Vragen {
+public abstract class Vragen {
     public static Scanner scanner = new Scanner(System.in);
     public static boolean vraagJaNee(String vraag){
         boolean klaar = false;

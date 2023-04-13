@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-abstract class ObjectStorage {
+public abstract class ObjectStorage {
     public static ArrayList<Klanttype> klanttypes = new ArrayList<Klanttype>();
     public static ArrayList<Persoon> personen = new ArrayList<Persoon>();
     public static ArrayList<Klant> klanten = new ArrayList<Klant>();
