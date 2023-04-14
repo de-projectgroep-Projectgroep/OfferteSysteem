@@ -22,6 +22,6 @@ Als je Java 17 wilt kunnen uitvoeren vanaf elke locatie op de opdrachtprompt, [m
 
 ## Stap 5: Voer het Offerte Systeem uit
 
-Open Command Prompt op windows en typ: `java -jar /pad/naar/OfferteSysteem.jar` of `"C:\Program Files\Java\jdk-17\bin\java.exe" -jar /pad/naar/OfferteSysteem.jar` en druk op Enter om de toepassing uit te voeren.
+Open Command Prompt op Windows en typ: `java -jar \pad\naar\OfferteSysteem.jar` of `"C:\Program Files\Java\jdk-17\bin\java.exe" -jar \pad\naar\OfferteSysteem.jar` en druk op Enter om de toepassing uit te voeren.
 
 Gefeliciteerd! Je hebt Java 17 succesvol gedownload en geïnstalleerd op Windows en je kan nu het prachtige Offerte Systeem draaien.
